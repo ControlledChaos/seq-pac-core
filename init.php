@@ -68,6 +68,7 @@ function init() {
 	new Admin\Content_Settings;
 
 	// Instantiate core classes.
+	new Core\Remove_Blog;
 	new Core\Type_Tax;
 	new Core\Register_Listing;
 	new Core\Register_Rental;
