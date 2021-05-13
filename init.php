@@ -65,7 +65,7 @@ function init() {
 	require SPRC_PATH . 'includes/vendor/compatibility.php';
 
 	// Instantiate settings classes.
-	new Admin\Content_Settings;
+	// new Admin\Content_Settings;
 
 	// Instantiate core classes.
 	new Core\Remove_Blog;
