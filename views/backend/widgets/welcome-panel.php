@@ -104,10 +104,11 @@ if ( is_plugin_active( 'flexmls-idx/flexmls_connect.php' ) ) :
 		</li>
 		<?php if ( $contact_page ) : ?>
 		<li>
-			<h3><?php _e( 'Contact Page', 'spr-core' ); ?></h3>
+			<h3><?php _e( 'IDX Plugin Support', 'spr-core' ); ?></h3>
 			<div class="sprc-dashboard-actions-icon contact-icon"><span class="dashicons dashicons-email"></span></div>
 			<p>
-				<a href="<?php echo admin_url( 'post.php?post=' . $contact_id . '&action=edit' ); ?>"><?php _e( 'Manage Info', 'spr-core' ); ?></a>
+				<a href="<?php echo esc_url( 'https://fbsidx.com/plugin/examples/' ); ?>" target="_blank" rel="noopener noreferrer nofollow"><?php _e( 'Examples', 'spr-core' ); ?></a>
+				<a href="<?php echo esc_url( 'https://fbsidx.com/plugin/documentation/' ); ?>" target="_blank" rel="noopener noreferrer nofollow"><?php _e( 'Documentation', 'spr-core' ); ?></a>
 			</p>
 		</li>
 		<?php endif; ?>
