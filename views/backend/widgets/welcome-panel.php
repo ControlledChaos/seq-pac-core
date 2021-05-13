@@ -65,7 +65,7 @@ $rental  = get_post_type_object( 'rental' );
 
 <?php
 /**
- * Content from the FlexMLS IDX plugin
+ * Content from the FlexMLS MLS plugin
  *
  * Checks to see if the plugin is active.
  *
@@ -82,36 +82,34 @@ if ( is_plugin_active( 'flexmls-idx/flexmls_connect.php' ) ) :
 
 	<ul class="sprc-dashboard-actions">
 		<li>
-			<h3><?php _e( 'IDX Integration', 'spr-core' ); ?></h3>
+			<h3><?php _e( 'MLS Integration', 'spr-core' ); ?></h3>
 			<div class="sprc-dashboard-actions-icon idx-widgets-icon"><span class="dashicons dashicons-migrate"></span></div>
 			<p>
 				<a href="<?php echo admin_url( 'widgets.php' ); ?>"><?php _e( 'Manage Widgets', 'spr-core' ); ?></a>
 			</p>
 		</li>
 		<li>
-			<h3><?php _e( 'IDX Neighborhoods', 'spr-core' ); ?></h3>
+			<h3><?php _e( 'MLS Neighborhoods', 'spr-core' ); ?></h3>
 			<div class="sprc-dashboard-actions-icon idx-neighborhoods-icon"><span class="dashicons dashicons-admin-multisite"></span></div>
 			<p>
 				<a href="<?php echo admin_url( 'admin.php?page=fmc_admin_neighborhood' ); ?>"><?php _e( 'Add Neighborhood', 'spr-core' ); ?></a>
 			</p>
 		</li>
 		<li>
-			<h3><?php _e( 'IDX Settings', 'spr-core' ); ?></h3>
+			<h3><?php _e( 'MLS Settings', 'spr-core' ); ?></h3>
 			<div class="sprc-dashboard-actions-icon idx-settings-icon"><span class="dashicons dashicons-admin-settings"></span></div>
 			<p>
 				<a href="<?php echo admin_url( 'admin.php?page=fmc_admin_settings' ); ?>"><?php _e( 'Manage Settings', 'spr-core' ); ?></a>
 			</p>
 		</li>
-		<?php if ( $contact_page ) : ?>
 		<li>
-			<h3><?php _e( 'IDX Plugin Support', 'spr-core' ); ?></h3>
-			<div class="sprc-dashboard-actions-icon contact-icon"><span class="dashicons dashicons-email"></span></div>
+			<h3><?php _e( 'MLS Plugin Support', 'spr-core' ); ?></h3>
+			<div class="sprc-dashboard-actions-icon contact-icon"><span class="dashicons dashicons-welcome-learn-more"></span></div>
 			<p>
 				<a href="<?php echo esc_url( 'https://fbsidx.com/plugin/examples/' ); ?>" target="_blank" rel="noopener noreferrer nofollow"><?php _e( 'Examples', 'spr-core' ); ?></a>
 				<a href="<?php echo esc_url( 'https://fbsidx.com/plugin/documentation/' ); ?>" target="_blank" rel="noopener noreferrer nofollow"><?php _e( 'Documentation', 'spr-core' ); ?></a>
 			</p>
 		</li>
-		<?php endif; ?>
 	</ul>
 </div>
 <?php endif; ?>
