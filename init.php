@@ -104,9 +104,6 @@ function init() {
 	new Media\Media;
 
 	// Instantiate third-party classes.
-	// new Vendor\Sample_ACF_Options;
-	// new Vendor\Sample_ACF_Suboptions;
-	// new Vendor\Sample_Plugin;
 	new Vendor\ACF;
 	new Vendor\ACFE;
 

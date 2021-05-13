@@ -99,14 +99,11 @@ define( 'SPRC_CLASSES', [
 
 	// Vendor classes.
 	SPRC_CLASS_NS . '\Vendor\Plugin'        => SPRC_CLASS['vendor'] . 'plugin.php',
-	// SPRC_CLASS_NS . '\Vendor\Sample_Plugin' => SPRC_CLASS['vendor'] . 'sample-plugin.php',
 	SPRC_CLASS_NS . '\Vendor\ACF'           => SPRC_CLASS['vendor'] . 'acf.php',
 	SPRC_CLASS_NS . '\Vendor\ACFE'          => SPRC_CLASS['vendor'] . 'acfe.php',
 	SPRC_CLASS_NS . '\Vendor\ACF_Columns'   => SPRC_CLASS['vendor'] . 'acf-columns.php',
 	SPRC_CLASS_NS . '\Vendor\Add_ACF_Options'       => SPRC_CLASS['vendor'] . 'add-acf-options.php',
 	SPRC_CLASS_NS . '\Vendor\Add_ACF_Suboptions'    => SPRC_CLASS['vendor'] . 'add-acf-suboptions.php',
-	// SPRC_CLASS_NS . '\Vendor\Sample_ACF_Options'    => SPRC_CLASS['vendor'] . 'sample-acf-options.php',
-	// SPRC_CLASS_NS . '\Vendor\Sample_ACF_Suboptions' => SPRC_CLASS['vendor'] . 'sample-acf-suboptions.php',
 
 	// Backend/admin classes,
 	SPRC_CLASS_NS . '\Admin\Admin'                   => SPRC_CLASS['admin'] . 'admin.php',
