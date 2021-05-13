@@ -69,8 +69,10 @@ function init() {
 
 	// Instantiate core classes.
 	new Core\Type_Tax;
-	// new Core\Register_Sample_Type;
-	// new Core\Register_Sample_Tax;
+	new Core\Register_Listing;
+	new Core\Register_Rental;
+	new Core\Register_Location;
+	new Core\Register_Types;
 	new Core\Register_Admin;
 	new Core\Register_Site_Help;
 
