@@ -52,7 +52,7 @@ class Register_Rental extends Register_Type {
 	 * @access protected
 	 * @var    string The dashicon class for book.
 	 */
-	protected $menu_icon = 'dashicons-exerpt-view';
+	protected $menu_icon = 'dashicons-list-view';
 
 	/**
 	 * Settings page
@@ -141,7 +141,7 @@ class Register_Rental extends Register_Type {
 
 		// New post type labels.
 		$labels = [
-			'menu_name' => 'Rentals',
+			'menu_name' => 'Rental Listings',
 			'add_new'   => 'New Rental'
 		];
 
