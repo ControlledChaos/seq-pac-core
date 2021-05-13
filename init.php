@@ -65,7 +65,6 @@ function init() {
 	require SPRC_PATH . 'includes/vendor/compatibility.php';
 
 	// Instantiate settings classes.
-	new Settings\Settings;
 	new Admin\Content_Settings;
 
 	// Instantiate core classes.
