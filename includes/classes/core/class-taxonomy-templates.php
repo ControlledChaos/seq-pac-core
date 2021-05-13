@@ -6,7 +6,7 @@
  * in the same way that templates can be used for post types.
  * The template is registered in the file header.
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
@@ -14,7 +14,7 @@
  * @example    In the template header: {Taxonomy Singular Label} Template: Grid
  */
 
-namespace SiteCore\Classes\Core;
+namespace SPR_Core\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'WPINC' ) ) {
@@ -145,9 +145,9 @@ final class Taxonomy_Templates {
 
 		?>
 		<div class="form-field custom-taxonomy-template">
-			<label for="custom-taxonomy-template"><?php _e( 'Template', 'sitecore' ); ?></label>
+			<label for="custom-taxonomy-template"><?php _e( 'Template', 'spr-core' ); ?></label>
 			<select name="custom-taxonomy-template" id="custom-taxonomy-template" class="postform">
-				<option value="default"><?php _e( 'Default Template', 'sitecore' ); ?></option>
+				<option value="default"><?php _e( 'Default Template', 'spr-core' ); ?></option>
 				<?php $this->templates_dropdown( $taxonomy ) ?>
 			</select>
 		</div><?php
@@ -172,11 +172,11 @@ final class Taxonomy_Templates {
 
 		<tr class="form-field custom-taxonomy-template">
 			<th scope="row" valign="top">
-				<label for="custom-taxonomy-template"><?php _e( 'Template', 'sitecore' ); ?></label>
+				<label for="custom-taxonomy-template"><?php _e( 'Template', 'spr-core' ); ?></label>
 			</th>
 			<td>
 				<select name="custom-taxonomy-template" id="custom-taxonomy-template" class="postform">
-					<option value="default"><?php _e( 'Default Template', 'sitecore' ); ?></option>
+					<option value="default"><?php _e( 'Default Template', 'spr-core' ); ?></option>
 					<?php $this->templates_dropdown( $taxonomy, $template ) ?>
 				</select>
 			</td>

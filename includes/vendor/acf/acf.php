@@ -4,7 +4,7 @@
  *
  * "Customize WordPress with powerful, professional and intuitive fields."
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Vendor
  * @category   Plugins
  * @version    5.9.3

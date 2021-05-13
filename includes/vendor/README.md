@@ -16,7 +16,7 @@ Advanced Custom Fields
  *
 "Customize WordPress with powerful, professional and intuitive fields."
  *
-@package    Site_Core
+@package    SPR_Core
 @subpackage Vendor
 @category   Plugins
 @version    x.x.x
@@ -44,7 +44,7 @@ The following docblock replaces the plugin header in the main file.
  *
  * "Enhancement Suite which improves Advanced Custom Fields administration."
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Vendor
  * @category   Plugins
  * @version    x.x.x

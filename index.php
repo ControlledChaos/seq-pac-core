@@ -1,10 +1,10 @@
 <?php
 /**
- * Site Core plugin
+ * Sequoia Pacific Realty Core plugin
  *
  * Develop site-specific plugins for ClassicPress, WordPress, and the antibrand system.
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Init
  * @category   Core
  * @since      1.0.0

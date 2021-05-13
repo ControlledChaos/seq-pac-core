@@ -7,16 +7,16 @@
  * more elegant than the native `die()` screen
  * proveded by the management system.
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Activate
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Activate;
+namespace SPR_Core\Classes\Activate;
 
 // Alias namespaces.
-use SiteCore\Classes as Classes;
+use SPR_Core\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -45,7 +45,7 @@ class Activate {
 
 		// Add notice if the PHP version is insufficient.
 		if ( ! Classes\php()->version() ) {
-			add_action( 'after_plugin_row_' . SCP_BASENAME, [ $this, 'row_notice' ], 5, 3 );
+			add_action( 'after_plugin_row_' . SPRC_BASENAME, [ $this, 'row_notice' ], 5, 3 );
 		}
 	}
 
@@ -67,34 +67,34 @@ class Activate {
 
 		?>
 		<style>
-			.plugins tr[data-plugin='<?php echo SCP_BASENAME; ?>'] th,
-			.plugins tr[data-plugin='<?php echo SCP_BASENAME; ?>'] td {
+			.plugins tr[data-plugin='<?php echo SPRC_BASENAME; ?>'] th,
+			.plugins tr[data-plugin='<?php echo SPRC_BASENAME; ?>'] td {
 				box-shadow: none;
 			}
 
 			<?php if ( isset( $plugin_data['update'] ) && ! empty( $plugin_data['update'] ) ) : ?>
 
-				.plugins tr.<?php echo 'sitecore'; ?>-plugin-tr td {
+				.plugins tr.<?php echo 'spr-core'; ?>-plugin-tr td {
 					box-shadow: none ! important;
 				}
 
-				.plugins tr.<?php echo 'sitecore'; ?>-plugin-tr .update-message {
+				.plugins tr.<?php echo 'spr-core'; ?>-plugin-tr .update-message {
 					margin-bottom: 0;
 				}
 
 			<?php endif; ?>
 		</style>
 
-		<tr id="plugin-php-notice" class="plugin-update-tr active <?php echo 'sitecore'; ?>-plugin-tr">
+		<tr id="plugin-php-notice" class="plugin-update-tr active <?php echo 'spr-core'; ?>-plugin-tr">
 			<td colspan="<?php echo $colspan; ?>" class="plugin-update colspanchange">
 				<div class="update-message notice inline notice-error notice-alt">
 					<?php echo sprintf(
 						'<p>%s %s %s %s %s %s</p>',
-						__( 'Functionality of the', 'sitecore' ),
-						SCP_NAME,
-						__( 'plugin has been disabled because it requires PHP version', 'sitecore' ),
+						__( 'Functionality of the', 'spr-core' ),
+						SPRC_NAME,
+						__( 'plugin has been disabled because it requires PHP version', 'spr-core' ),
 						Classes\php()->minimum(),
-						__( 'or greater. Your system is running PHP version', 'sitecore' ),
+						__( 'or greater. Your system is running PHP version', 'spr-core' ),
 						phpversion()
 					); ?>
 				</div>
@@ -116,11 +116,11 @@ class Activate {
 		<div id="plugin-php-notice" class="notice notice-error is-dismissible">
 			<?php echo sprintf(
 				'<p>%s %s %s %s %s %s</p>',
-				__( 'Functionality of the', 'sitecore' ),
-				SCP_NAME,
-				__( 'plugin has been disabled because it requires PHP version', 'sitecore' ),
+				__( 'Functionality of the', 'spr-core' ),
+				SPRC_NAME,
+				__( 'plugin has been disabled because it requires PHP version', 'spr-core' ),
 				php()->minimum(),
-				__( 'or greater. Your system is running PHP version', 'sitecore' ),
+				__( 'or greater. Your system is running PHP version', 'spr-core' ),
 				phpversion()
 			); ?>
 		</div>

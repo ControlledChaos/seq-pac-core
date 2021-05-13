@@ -2,13 +2,13 @@
 /**
  * Advanced Custom Fields compatibility
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Vendor;
+namespace SPR_Core\Classes\Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -114,7 +114,7 @@ class ACF extends Plugin {
 	public function use_bundled() {
 
 		// Override constant.
-		if ( defined( 'SCP_USE_BUNDLED_ACF' ) && false == SCP_USE_BUNDLED_ACF ) {
+		if ( defined( 'SPRC_USE_BUNDLED_ACF' ) && false == SPRC_USE_BUNDLED_ACF ) {
 			return false;
 		}
 		return true;
@@ -129,7 +129,7 @@ class ACF extends Plugin {
 	 * @return string Returns the URL for ACF files.
 	 */
 	public function acf_settings_url( $url ) {
-		$url = SCP_URL . 'includes/vendor/' . $this->bundled_dir . '/';
+		$url = SPRC_URL . 'includes/vendor/' . $this->bundled_dir . '/';
 		return $url;
 	}
 
@@ -148,7 +148,7 @@ class ACF extends Plugin {
 		if ( is_multisite() && ! is_main_site() && ! is_super_admin( get_current_user_id() ) ) {
 			$show_admin = false;
 		}
-		return apply_filters( 'scp_acf_settings_show_admin', $show_admin );
+		return apply_filters( 'sprc_acf_settings_show_admin', $show_admin );
 	}
 
 	/**
@@ -160,7 +160,7 @@ class ACF extends Plugin {
 	 * @return string Returns the directory path.
 	 */
 	public function save_acf_json( $path ) {
-		$path = SCP_PATH . 'includes/settings/acf-json';
+		$path = SPRC_PATH . 'includes/settings/acf-json';
 		return $path;
 	}
 
@@ -174,7 +174,7 @@ class ACF extends Plugin {
 	 */
 	public function load_acf_json( $paths ) {
 		unset( $paths[0] );
-		$paths[] = SCP_PATH . 'includes/settings/acf-json';
+		$paths[] = SPRC_PATH . 'includes/settings/acf-json';
 		return $paths;
 	}
 

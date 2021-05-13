@@ -2,13 +2,13 @@
 /**
  * Advanced Custom Fields Extended compatibility
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Vendor;
+namespace SPR_Core\Classes\Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -115,7 +115,7 @@ class ACFE extends Plugin {
 	 * @return string Returns the URL for ACF files.
 	 */
 	public function acf_settings_url( $url ) {
-		return SCP_ACF_URL;
+		return SPRC_ACF_URL;
 	}
 
 	/**
@@ -139,7 +139,7 @@ class ACFE extends Plugin {
 	 * @return string Returns the directory path.
 	 */
 	public function save_acf_json( $path ) {
-		$path = SCP_PATH . 'includes/settings/acf-json';
+		$path = SPRC_PATH . 'includes/settings/acf-json';
 		return $path;
 	}
 
@@ -153,7 +153,7 @@ class ACFE extends Plugin {
 	 */
 	public function load_acf_json( $paths ) {
 		unset( $paths[0] );
-		$paths[] = SCP_PATH . 'includes/settings/acf-json';
+		$paths[] = SPRC_PATH . 'includes/settings/acf-json';
 		return $paths;
 	}
 

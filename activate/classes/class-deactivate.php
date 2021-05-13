@@ -2,13 +2,13 @@
 /**
  * Plugin deactivation class
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Activate
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Activate;
+namespace SPR_Core\Classes\Activate;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

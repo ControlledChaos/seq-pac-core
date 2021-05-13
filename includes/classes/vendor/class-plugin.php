@@ -5,16 +5,16 @@
  * Extend this class to load a plugin and
  * add related filters & actions.
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Vendor;
+namespace SPR_Core\Classes\Vendor;
 
 // Alias namespaces.
-use SiteCore as SiteCore;
+use SPR_Core as SPR_Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Plugin {
 
 	// Define path to the vendor directory for bundled plugins.
-	CONST SCP_VENDOR_PATH = SCP_PATH . 'includes/vendor/';
+	CONST SPRC_VENDOR_PATH = SPRC_PATH . 'includes/vendor/';
 
 	/**
 	 * Installed plugin directory
@@ -149,7 +149,7 @@ class Plugin {
 		 * method will return true by default.
 		 * Define a unique constant in a child class.
 		 */
-		if ( defined( 'SCP_USE_THIS_PLUGIN' ) && false == SCP_USE_THIS_PLUGIN ) {
+		if ( defined( 'SPRC_USE_THIS_PLUGIN' ) && false == SPRC_USE_THIS_PLUGIN ) {
 			return false;
 		}
 		return true;
@@ -171,7 +171,7 @@ class Plugin {
 		$file = $this->bundled_file;
 
 		// Return the path to the core plugin file.
-		return self :: SCP_VENDOR_PATH . $dir . '/' . $file;
+		return self :: SPRC_VENDOR_PATH . $dir . '/' . $file;
 	}
 
 	/**
@@ -203,7 +203,7 @@ class Plugin {
 		) {
 			$path = WP_PLUGIN_DIR . '/' . $dir . '/' . $file;
 		}
-		return apply_filters( 'scp_plugin_upgrade_path', $path );
+		return apply_filters( 'sprc_plugin_upgrade_path', $path );
 	}
 
 	/**
@@ -228,7 +228,7 @@ class Plugin {
 		) {
 			$basename = $dir . '/' . $file;
 		}
-		return apply_filters( 'scp_plugin_basic_basename', $basename );
+		return apply_filters( 'sprc_plugin_basic_basename', $basename );
 	}
 
 	/**
@@ -253,7 +253,7 @@ class Plugin {
 		) {
 			$basename = $dir . '/' . $file;
 		}
-		return apply_filters( 'scp_plugin_upgrade_basename', $basename );
+		return apply_filters( 'sprc_plugin_upgrade_basename', $basename );
 	}
 
 	/**
@@ -318,7 +318,7 @@ class Plugin {
 		if ( false == $this->allow_installed ) {
 			$allow = false;
 		}
-		return apply_filters( 'scp_plugin_allow_installed', $allow );
+		return apply_filters( 'sprc_plugin_allow_installed', $allow );
 	}
 
 	/**
@@ -337,7 +337,7 @@ class Plugin {
 		if ( false == $this->allow_upgrade ) {
 			$allow = false;
 		}
-		return apply_filters( 'scp_plugin_allow_upgrade', $allow );
+		return apply_filters( 'sprc_plugin_allow_upgrade', $allow );
 	}
 
 	/**
@@ -447,9 +447,9 @@ class Plugin {
 				<div class="update-message notice inline notice-error notice-alt">
 					<?php echo sprintf(
 						'<p>%s %s %s</p>',
-						__( 'This plugin is not allowed by the', 'sitecore' ),
-						SCP_NAME,
-						__( 'plugin to be activated.', 'sitecore' )
+						__( 'This plugin is not allowed by the', 'spr-core' ),
+						SPRC_NAME,
+						__( 'plugin to be activated.', 'spr-core' )
 					); ?>
 				</div>
 			</td>

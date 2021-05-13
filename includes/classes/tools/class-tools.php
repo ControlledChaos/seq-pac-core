@@ -2,14 +2,14 @@
 /**
  * Tools class
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Tools
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Tools;
-use SiteCore\Classes as Classes;
+namespace SPR_Core\Classes\Tools;
+use SPR_Core\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

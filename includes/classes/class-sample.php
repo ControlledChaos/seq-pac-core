@@ -4,13 +4,13 @@
  *
  * @see `includes/classes/README.md`;
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   General
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes;
+namespace SPR_Core\Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -130,13 +130,13 @@ class Sample extends Base {
  * Delete this function if not needed.
  *
  * @example Call a method from the namespaced class:
- *          `Classes\scp_sample_class()->sample_method();`
+ *          `Classes\sprc_sample_class()->sample_method();`
  *
  * @since  1.0.0
  * @access public
  * @return object Returns an instance of the class.
  */
-function scp_sample_class() {
+function sprc_sample_class() {
 	return Sample :: instance();
 }
 
@@ -145,4 +145,4 @@ function scp_sample_class() {
  *
  * Uncomment to use.
  */
-// scp_sample_class();
+// sprc_sample_class();

@@ -2,13 +2,13 @@
 /**
  * Media class
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Media
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Media;
+namespace SPR_Core\Classes\Media;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -184,7 +184,7 @@ class Media {
 		global $post;
 
 		// Apply a filter for conditional image sizes.
-		$size = apply_filters( 'scp_rss_featured_image_size', 'medium' );
+		$size = apply_filters( 'sprc_rss_featured_image_size', 'medium' );
 
 		/**
 		 * Use this layout only if the post has a featured image.
@@ -249,7 +249,7 @@ class Media {
 
 		$html5 = current_theme_supports( 'html5', 'gallery' );
 		$atts  = apply_filters(
-			'scp_fancybox_atts',
+			'sprc_fancybox_atts',
 				shortcode_atts( [
 
 				// Default parameters.

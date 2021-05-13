@@ -2,17 +2,17 @@
 /**
  * Register media type taxonomy
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Media
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Media;
+namespace SPR_Core\Classes\Media;
 
 // Alias namespaces.
-use SiteCore\Classes\Core as Core;
+use SPR_Core\Classes\Core as Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

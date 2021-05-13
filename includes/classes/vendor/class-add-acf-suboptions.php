@@ -2,17 +2,17 @@
 /**
  * Register ACF options subpage
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Vendor;
+namespace SPR_Core\Classes\Vendor;
 
 // Alias namespaces.
-use SiteCore\Classes\Admin as Admin;
+use SPR_Core\Classes\Admin as Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

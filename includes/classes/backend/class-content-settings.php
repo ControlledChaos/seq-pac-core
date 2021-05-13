@@ -2,15 +2,15 @@
 /**
  * Content settings class
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Admin;
-use SiteCore\Classes\Settings as Settings;
+namespace SPR_Core\Classes\Admin;
+use SPR_Core\Classes\Settings as Settings;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -121,9 +121,9 @@ class Content_Settings extends Add_Settings_Page {
 
 		$this->add_content_tab( [
 			'id'         => 'content-settings-intro',
-			'tab'        => __( 'Intro', 'sitecore' ),
-			'heading'    => __( 'Introduction', 'sitecore' ),
-			'content'    => __( 'In development', 'sitecore' ),
+			'tab'        => __( 'Intro', 'spr-core' ),
+			'heading'    => __( 'Introduction', 'spr-core' ),
+			'content'    => __( 'In development', 'spr-core' ),
 			'callback'   => ''
 		] );
 	}
@@ -136,6 +136,6 @@ class Content_Settings extends Add_Settings_Page {
 	 * @return string Returns the page heading.
 	 */
 	protected function heading() {
-		return __( 'Content Settings', 'sitecore' );
+		return __( 'Content Settings', 'spr-core' );
 	}
 }

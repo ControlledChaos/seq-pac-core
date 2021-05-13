@@ -2,19 +2,19 @@
 /**
  * Form fields for admin settings menu tab
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Views
  * @category   Forms
  * @since      1.0.0
  */
 
-namespace SiteCore\Views\Admin;
-use SiteCore\Classes\Admin as Admin;
+namespace SPR_Core\Views\Admin;
+use SPR_Core\Classes\Admin as Admin;
 
 // Instance of the Manage_Website_Page class.
 $page = new Admin\Admin_Settings_Page;
 
 
-settings_fields( 'scp-site-admin-menu' );
-do_settings_sections( 'scp-site-admin-menu' );
+settings_fields( 'sprc-site-admin-menu' );
+do_settings_sections( 'sprc-site-admin-menu' );
 

@@ -2,13 +2,13 @@
 /**
  * User colors class
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace Site_Core\Classes\Admin;
+namespace SPR_Core\Classes\Admin;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

@@ -2,14 +2,14 @@
 /**
  * Admin class
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
-use SiteCore\Classes as Classes;
+namespace SPR_Core\Classes\Admin;
+use SPR_Core\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -59,7 +59,7 @@ class Admin extends Classes\Base {
 		add_action( 'admin_head', [ $this, 'admin_only_updates' ], 1 );
 
 		// Remove Site Health from menu.
-		if ( defined( 'SCP_ALLOW_SITE_HEALTH' ) && ! SCP_ALLOW_SITE_HEALTH ) {
+		if ( defined( 'SPRC_ALLOW_SITE_HEALTH' ) && ! SPRC_ALLOW_SITE_HEALTH ) {
 			add_action( 'admin_menu', [ $this, 'menu_remove_site_health' ] );
 		}
 
@@ -120,7 +120,7 @@ class Admin extends Classes\Base {
 		 *
 		 * @since 1.0.0
 		 */
-		wp_enqueue_style( SCP_CONFIG['admin_slug'] . '-admin', SCP_URL . 'assets/css/admin.min.css', [], '', 'all' );
+		wp_enqueue_style( SPRC_CONFIG['admin_slug'] . '-admin', SPRC_URL . 'assets/css/admin.min.css', [], '', 'all' );
 	}
 
 	/**
@@ -246,8 +246,8 @@ class Admin extends Classes\Base {
 			'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a> %s',
 			get_bloginfo( 'name' ),
 			esc_html__( 'is managed by the' ),
-			esc_url( SCP_PLUGIN_URL ),
-			esc_html( SCP_NAME ),
+			esc_url( SPRC_PLUGIN_URL ),
+			esc_html( SPRC_NAME ),
 			esc_html__( 'plugin' )
 		);
 
@@ -263,18 +263,18 @@ class Admin extends Classes\Base {
 			'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a>',
 			get_bloginfo( 'name' ),
 			esc_html__( 'website was designed & developed by' ),
-			esc_url( SCP_DEV_URL ),
-			esc_html( SCP_DEV_NAME )
+			esc_url( SPRC_DEV_URL ),
+			esc_html( SPRC_DEV_NAME )
 		);
 
 		// Developer email option.
 		$dev_email = sprintf(
 			'%s %s %s <a href="mailto:%s">%s</a>',
 			esc_html__( 'Contact' ),
-			esc_html( SCP_DEV_NAME ),
+			esc_html( SPRC_DEV_NAME ),
 			esc_html__( 'for website assistance:' ),
-			esc_html( SCP_DEV_EMAIL ),
-			esc_html( SCP_DEV_EMAIL )
+			esc_html( SPRC_DEV_EMAIL ),
+			esc_html( SPRC_DEV_EMAIL )
 		);
 
 		echo $name_desc;
@@ -298,8 +298,8 @@ class Admin extends Classes\Base {
 			'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a> %s',
 			get_bloginfo( 'name' ),
 			esc_html__( 'is managed by the' ),
-			esc_url( SCP_PLUGIN_URL ),
-			esc_html( SCP_NAME ),
+			esc_url( SPRC_PLUGIN_URL ),
+			esc_html( SPRC_NAME ),
 			esc_html__( 'plugin' )
 		);
 
@@ -315,18 +315,18 @@ class Admin extends Classes\Base {
 			'%s %s <a href="%s" target="_blank" rel="nofollow">%s</a>',
 			get_bloginfo( 'name' ),
 			esc_html__( 'website was designed & developed by' ),
-			esc_url( SCP_DEV_URL ),
-			esc_html( SCP_DEV_NAME )
+			esc_url( SPRC_DEV_URL ),
+			esc_html( SPRC_DEV_NAME )
 		);
 
 		// Developer email option.
 		$dev_email = sprintf(
 			'%s %s %s <a href="mailto:%s">%s</a>',
 			esc_html__( 'Contact' ),
-			esc_html( SCP_DEV_NAME ),
+			esc_html( SPRC_DEV_NAME ),
 			esc_html__( 'for website assistance:' ),
-			esc_html( SCP_DEV_EMAIL ),
-			esc_html( SCP_DEV_EMAIL )
+			esc_html( SPRC_DEV_EMAIL ),
+			esc_html( SPRC_DEV_EMAIL )
 		);
 
 		echo $dev_email;

@@ -2,14 +2,14 @@
 /**
  * Dashboard class
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Admin
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Admin;
-use SiteCore\Classes as Classes;
+namespace SPR_Core\Classes\Admin;
+use SPR_Core\Classes as Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -53,7 +53,7 @@ class Dashboard extends Classes\Base {
 		unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_petitions'] );
 
 		// Site Health.
-		if ( defined( 'SCP_ALLOW_SITE_HEALTH' ) && ! SCP_ALLOW_SITE_HEALTH ) {
+		if ( defined( 'SPRC_ALLOW_SITE_HEALTH' ) && ! SPRC_ALLOW_SITE_HEALTH ) {
 			remove_meta_box( 'dashboard_site_health', 'dashboard', 'normal' );
 		}
 

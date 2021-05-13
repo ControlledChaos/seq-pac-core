@@ -2,13 +2,13 @@
 /**
  * Enhancements to post types and taxonomies
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Core;
+namespace SPR_Core\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -73,13 +73,13 @@ class Type_Tax {
 
 		if ( $post_type_obj ) {
 			$name = $post_type_obj->labels->singular_name;
-			$post_title = esc_html__( $name . ' Title', 'sitecore' );
+			$post_title = esc_html__( $name . ' Title', 'spr-core' );
 		} else {
-			$post_title = esc_html__( 'Title', 'sitecore' );
+			$post_title = esc_html__( 'Title', 'spr-core' );
 		}
 
 		// Apply a filter conditional modification.
-		$title = apply_filters( 'scp_post_title_placeholders', $post_title );
+		$title = apply_filters( 'sprc_post_title_placeholders', $post_title );
 
 		// Return the new placeholder.
 		return $title;
@@ -115,48 +115,48 @@ class Type_Tax {
 				0  => '', // Unused. Messages start at index 1.
 
 				1  => sprintf(
-					__( '%1s updated. <a href="%2s">View %3s</a>', 'sitecore' ), $post_object->labels->singular_name,
+					__( '%1s updated. <a href="%2s">View %3s</a>', 'spr-core' ), $post_object->labels->singular_name,
 					esc_url( get_permalink( $post_ID ) ),
 					$post_object->labels->singular_name
 				),
-				2  => __( 'Custom field updated.', 'sitecore' ),
-				3  => __( 'Custom field deleted.', 'sitecore' ),
+				2  => __( 'Custom field updated.', 'spr-core' ),
+				3  => __( 'Custom field deleted.', 'spr-core' ),
 				4  => sprintf(
-					__( '1%s updated.', 'sitecore' ),
+					__( '1%s updated.', 'spr-core' ),
 					$post_object->labels->singular_name
 				),
 				5  => isset( $_GET['revision']) ? sprintf(
-					__( '%1s restored to revision from %2s', 'sitecore' ),
+					__( '%1s restored to revision from %2s', 'spr-core' ),
 					$post_object->labels->singular_name,
 					wp_post_revision_title( (int) $_GET['revision'], false )
 					) : false,
 				6  => sprintf(
-					__( '%1s published. <a href="%2s">View %3s</a>', 'sitecore' ),
+					__( '%1s published. <a href="%2s">View %3s</a>', 'spr-core' ),
 					$post_object->labels->singular_name,
 					esc_url( get_permalink( $post_ID ) ),
 					$post_object->labels->singular_name
 				),
 				7  => sprintf(
-					__( '%1s saved.', 'sitecore' ),
+					__( '%1s saved.', 'spr-core' ),
 					$post_object->labels->singular_name
 				),
 				8  => sprintf(
-					__( '%1s submitted. <a target="_blank" href="%2s">Preview %3s</a>', 'sitecore' ),
+					__( '%1s submitted. <a target="_blank" href="%2s">Preview %3s</a>', 'spr-core' ),
 					$post_object->labels->singular_name,
 					esc_url( add_query_arg( 'preview', 'true',
 					get_permalink( $post_ID ) ) ),
 					$post_object->labels->singular_name
 				),
 				9  => sprintf(
-					__( '%1s scheduled for: <strong>%2s</strong>. <a target="_blank" href="%3s">Preview %4s</a>', 'sitecore'  ),
+					__( '%1s scheduled for: <strong>%2s</strong>. <a target="_blank" href="%3s">Preview %4s</a>', 'spr-core'  ),
 					$post_object->labels->singular_name,
-					date_i18n( __( 'M j, Y @ G:i', 'sitecore' ),
+					date_i18n( __( 'M j, Y @ G:i', 'spr-core' ),
 					strtotime( $post->post_date ) ),
 					esc_url( get_permalink( $post_ID ) ),
 					$post_object->labels->singular_name
 				),
 				10 => sprintf(
-					__( '%1s draft updated. <a target="_blank" href="%2s">Preview %3s</a>', 'sitecore'  ),
+					__( '%1s draft updated. <a target="_blank" href="%2s">Preview %3s</a>', 'spr-core'  ),
 					$post_object->labels->singular_name,
 					esc_url( add_query_arg( 'preview', 'true',
 					get_permalink( $post_ID ) ) ),

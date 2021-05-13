@@ -8,13 +8,13 @@
  *
  * @see `includes/classes/README.md`;
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   General
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes;
+namespace SPR_Core\Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

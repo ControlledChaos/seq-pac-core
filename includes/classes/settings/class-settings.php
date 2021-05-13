@@ -2,19 +2,19 @@
 /**
  * Settings class
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Settings
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Settings;
+namespace SPR_Core\Classes\Settings;
 
 // Alias namespaces.
 use
-SiteCore\Classes        as Classes,
-SiteCore\Classes\Admin  as Admin,
-SiteCore\Classes\Vendor as Vendor;
+SPR_Core\Classes        as Classes,
+SPR_Core\Classes\Admin  as Admin,
+SPR_Core\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -22,10 +22,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define forms directory.
-if ( ! defined( 'SCP_FORMS' ) ) {
-	define( 'SCP_FORMS', [
-		'forms'    => SCP_PATH . 'views/backend/forms/',
-		'partials' => SCP_PATH . 'views/backend/forms/partials'
+if ( ! defined( 'SPRC_FORMS' ) ) {
+	define( 'SPRC_FORMS', [
+		'forms'    => SPRC_PATH . 'views/backend/forms/',
+		'partials' => SPRC_PATH . 'views/backend/forms/partials'
 	] );
 }
 
@@ -45,26 +45,26 @@ class Settings {
 	 *
 	 * The fully qualified page class with namespace.
 	 *
-	 * @example 'SiteCore\Classes\Admin\Sample_Settings_Page'
+	 * @example 'SPR_Core\Classes\Admin\Sample_Settings_Page'
 	 *
 	 * @since  1.0.0
 	 * @access protected
 	 * @var    string Namespace & class.
 	 */
-	protected $api_page_class = 'SiteCore\Classes\Admin\Add_Settings_Page';
+	protected $api_page_class = 'SPR_Core\Classes\Admin\Add_Settings_Page';
 
 	/**
 	 * ACF settings page class
 	 *
 	 * The fully qualified page class with namespace.
 	 *
-	 * @example 'SiteCore\Classes\Vendor\Sample_ACF_Options'
+	 * @example 'SPR_Core\Classes\Vendor\Sample_ACF_Options'
 	 *
 	 * @since  1.0.0
 	 * @access protected
 	 * @var    string Namespace & class.
 	 */
-	protected $acf_page_class = 'SiteCore\Classes\Vendor\Sample_ACF_Options';
+	protected $acf_page_class = 'SPR_Core\Classes\Vendor\Sample_ACF_Options';
 
 	/**
 	 * Constructor method
@@ -150,14 +150,14 @@ class Settings {
 
 		$defaults = [
 			'id'            => null,
-			'id_before'     => 'scp_',
+			'id_before'     => 'sprc_',
 			'id_after'      => null,
 			'capability'    => 'read',
 			'section'       => null,
 			'label'         => null,
 			'label_before'  => null,
 			'label_after'   => null,
-			'class'         => 'scp-setting',
+			'class'         => 'sprc-setting',
 			'icon'          => null,
 			'description'   => null,
 			'hide-if-no-js' => false,
@@ -195,7 +195,7 @@ function get_settings() {
 	 * This includes main directory (`/`) and any
 	 * subdirectories (`* /`).
 	 */
-	$dir_file = SCP_PATH . 'includes/settings' . "{/,/*/}" . 'settings-*.php';
+	$dir_file = SPRC_PATH . 'includes/settings' . "{/,/*/}" . 'settings-*.php';
 
 	// Include each file matching the path patterns.
 	foreach ( glob( $dir_file, GLOB_BRACE ) as $settings_file ) {

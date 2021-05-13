@@ -2,13 +2,13 @@
 /**
  * User roles and capabilities
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Users
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes\Users;
+namespace SPR_Core\Classes\Users;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -61,7 +61,7 @@ class User_Roles_Caps {
 
 		global $wp_roles;
 
-		return apply_filters( 'scp_get_roles', $wp_roles->role_names );
+		return apply_filters( 'sprc_get_roles', $wp_roles->role_names );
 	}
 
 	/**
@@ -82,7 +82,7 @@ class User_Roles_Caps {
 			$final_roles[$key] = $role['name'];
 		}
 
-		return apply_filters( 'scp_get_editable_roles', (array) $final_roles );
+		return apply_filters( 'sprc_get_editable_roles', (array) $final_roles );
 	}
 
 	/**
@@ -112,7 +112,7 @@ class User_Roles_Caps {
 			$roles[ $role ] = $all_roles[ $role ];
 		}
 
-		return apply_filters( 'scp_get_user_roles', $roles );
+		return apply_filters( 'sprc_get_user_roles', $roles );
 	}
 
 	/**
@@ -128,7 +128,7 @@ class User_Roles_Caps {
 	 */
 	public function update_roles( $user_id = 0, $roles = [] ) {
 
-		do_action( 'scp_before_update_roles', $user_id, $roles );
+		do_action( 'sprc_before_update_roles', $user_id, $roles );
 
 		$roles = array_map( 'sanitize_key', (array) $roles );
 		$roles = array_filter( (array) $roles, 'get_role' );
@@ -151,7 +151,7 @@ class User_Roles_Caps {
 			$user->add_role( $role );
 		}
 
-		do_action( 'scp_after_update_roles', $user_id, $roles, $user->roles );
+		do_action( 'sprc_after_update_roles', $user_id, $roles, $user->roles );
 
 		return true;
 	}
@@ -169,7 +169,7 @@ class User_Roles_Caps {
 	 */
 	public function can_update_roles() {
 
-		do_action( 'scp_before_can_update_roles' );
+		do_action( 'sprc_before_can_update_roles' );
 
 		/**
 		 * Conditionally print the checklist
@@ -211,7 +211,7 @@ class User_Roles_Caps {
 		 */
 		add_role(
 			'developer',
-			__( 'Developer', 'sitecore' ),
+			__( 'Developer', 'spr-core' ),
 			get_role( 'administrator' )->capabilities
 		);
 	}
@@ -282,7 +282,7 @@ class User_Roles_Caps {
 			return;
 		}
 
-		wp_nonce_field( 'update-scp-multiple-roles', 'scp_multiple_roles_nonce' );
+		wp_nonce_field( 'update-sprc-multiple-roles', 'sprc_multiple_roles_nonce' );
 
 		$roles = $this->get_editable_roles();
 
@@ -292,7 +292,7 @@ class User_Roles_Caps {
 			$user_roles = null;
 		}
 
-		include( apply_filters( 'scp_checklist_template', SCP_PATH . 'views/backend/forms/user-roles-checklist.php' ) );
+		include( apply_filters( 'sprc_checklist_template', SPRC_PATH . 'views/backend/forms/user-roles-checklist.php' ) );
 
 	}
 
@@ -313,18 +313,18 @@ class User_Roles_Caps {
 		 * The checklist is not always rendered when this method is
 		 * triggered on `profile_update` (i.e. when updating a
 		 * profile programmatically). First check that the
-		 * `scp_multiple_roles_nonce` is available, else bail.
+		 * `sprc_multiple_roles_nonce` is available, else bail.
 		 * If we continue to process and update_roles(),
 		 * all user roles will be lost. We check for
-		 * `scp_multiple_roles_nonce` rather than `scp_multiple_roles`
+		 * `sprc_multiple_roles_nonce` rather than `sprc_multiple_roles`
 		 * as this input/variable will be empty if all role inputs
 		 * are left unchecked.
 		 */
-		if ( ! isset( $_POST['scp_multiple_roles_nonce'] ) ) {
+		if ( ! isset( $_POST['sprc_multiple_roles_nonce'] ) ) {
 			return;
 		}
 
-		if ( ! wp_verify_nonce( $_POST['scp_multiple_roles_nonce'], 'update-scp-multiple-roles' ) ) {
+		if ( ! wp_verify_nonce( $_POST['sprc_multiple_roles_nonce'], 'update-sprc-multiple-roles' ) ) {
 			return;
 		}
 
@@ -332,8 +332,8 @@ class User_Roles_Caps {
 			return;
 		}
 
-		if ( isset( $_POST['scp_multiple_roles'] ) && is_array( $_POST['scp_multiple_roles'] ) ) {
-			$new_roles = $_POST['scp_multiple_roles'];
+		if ( isset( $_POST['sprc_multiple_roles'] ) && is_array( $_POST['sprc_multiple_roles'] ) ) {
+			$new_roles = $_POST['sprc_multiple_roles'];
 		} else {
 			$new_roles = [];
 		}
@@ -359,7 +359,7 @@ class User_Roles_Caps {
 	 */
 	public function network_add_roles_in_signup_meta( $meta, $domain, $path, $title, $user, $user_email, $key ) {
 
-		if ( isset( $_POST['scp_multiple_roles_nonce'] ) && ! wp_verify_nonce( $_POST['scp_multiple_roles_nonce'], 'update-scp-multiple-roles' ) ) {
+		if ( isset( $_POST['sprc_multiple_roles_nonce'] ) && ! wp_verify_nonce( $_POST['sprc_multiple_roles_nonce'], 'update-sprc-multiple-roles' ) ) {
 			return;
 		}
 
@@ -367,8 +367,8 @@ class User_Roles_Caps {
 			return;
 		}
 
-		if ( isset( $_POST['scp_multiple_roles'] ) && is_array( $_POST['scp_multiple_roles'] ) ) {
-			$new_roles = $_POST['scp_multiple_roles'];
+		if ( isset( $_POST['sprc_multiple_roles'] ) && is_array( $_POST['sprc_multiple_roles'] ) ) {
+			$new_roles = $_POST['sprc_multiple_roles'];
 		} else {
 			$new_roles = [];
 		}
@@ -377,7 +377,7 @@ class User_Roles_Caps {
 			return;
 		}
 
-		$meta['scp_roles'] = $new_roles;
+		$meta['sprc_roles'] = $new_roles;
 
 		return $meta;
 	}
@@ -396,8 +396,8 @@ class User_Roles_Caps {
 	 */
 	public function network_add_roles_after_activation( $user_id, $password, $meta ) {
 
-		if ( ! empty( $meta['scp_roles'] ) ) {
-			$this->update_roles( $user_id, $meta['scp_roles'] );
+		if ( ! empty( $meta['sprc_roles'] ) ) {
+			$this->update_roles( $user_id, $meta['sprc_roles'] );
 		}
 	}
 
@@ -414,7 +414,7 @@ class User_Roles_Caps {
 	public function list_role_column_replace( $columns ) {
 
 		unset( $columns['role'] );
-		$columns['scp_multiple_roles_column'] = __( 'Roles', 'sitecore' );
+		$columns['sprc_multiple_roles_column'] = __( 'Roles', 'spr-core' );
 
 		return $columns;
 	}
@@ -433,14 +433,14 @@ class User_Roles_Caps {
 	 */
 	public function list_role_column_content( $output, $column, $user_id ) {
 
-		if ( 'scp_multiple_roles_column' !== $column ) {
+		if ( 'sprc_multiple_roles_column' !== $column ) {
 			return $output;
 		}
 
 		$roles = $this->get_user_roles( $user_id );
 
 		ob_start();
-		include( apply_filters( 'scp_column_template', SCP_PATH . 'views/backend/forms/user-roles-admin-column.php' ) );
+		include( apply_filters( 'sprc_column_template', SPRC_PATH . 'views/backend/forms/user-roles-admin-column.php' ) );
 		return ob_get_clean();
 	}
 }

@@ -2,19 +2,19 @@
 /**
  * Form fields for user default editor option
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Views
  * @category   Forms
  * @since      1.0.0
  */
 
 // Alias namespaces.
-use SiteCore\Classes\Core as Core;
+use SPR_Core\Classes\Core as Core;
 
 ?>
 <table class="form-table">
 	<tr class="editor-options-user-options">
-		<th scope="row"><?php _e( 'Default Editor', 'sitecore' ); ?></th>
+		<th scope="row"><?php _e( 'Default Editor', 'spr-core' ); ?></th>
 		<td>
 		<?php wp_nonce_field( 'allow-user-settings', 'editor-options-user-settings' ); ?>
 		<?php Core\Editor_Options :: editor_settings_default(); ?>

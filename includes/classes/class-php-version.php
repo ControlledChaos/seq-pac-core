@@ -6,13 +6,13 @@
  * on the plugin's server, notably disable functionality
  * if the minimum version is not met.
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
-namespace SiteCore\Classes;
+namespace SPR_Core\Classes;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

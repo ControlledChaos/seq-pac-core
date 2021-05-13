@@ -2,14 +2,14 @@
 /**
  * Base class to register a taxonomy
  *
- * @package    Site_Core
+ * @package    SPR_Core
  * @subpackage Classes
  * @category   Core
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SiteCore\Classes\Core;
+namespace SPR_Core\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -191,7 +191,7 @@ class Register_Tax {
 	public function options() {
 
 		$options = [
-			'label'                 => __( ucwords( $this->plural ), 'sitecore' ),
+			'label'                 => __( ucwords( $this->plural ), 'spr-core' ),
 			'labels'                => $this->labels(),
 			'public'                => $this->public,
 			'hierarchical'          => $this->hierarchical,
@@ -223,25 +223,25 @@ class Register_Tax {
 	public function labels() {
 
 		$labels = [
-			'name'                       => __( ucwords( $this->plural ), 'sitecore' ),
-			'singular_name'              => __( ucwords( $this->singular ), 'sitecore' ),
-			'menu_name'                  => __( ucwords( $this->plural ), 'sitecore' ),
-			'all_items'                  => __( 'All ' . ucwords( $this->plural ), 'sitecore' ),
-			'edit_item'                  => __( 'Edit ' . ucwords( $this->singular ), 'sitecore' ),
-			'view_item'                  => __( 'View ' . ucwords( $this->singular ), 'sitecore' ),
-			'update_item'                => __( 'Update ' . ucwords( $this->singular ), 'sitecore' ),
-			'add_new_item'               => __( 'Add New ' . ucwords( $this->singular ), 'sitecore' ),
-			'new_item_name'              => __( 'New ' . ucwords( $this->singular ), 'sitecore' ),
-			'parent_item'                => __( 'Parent ' . ucwords( $this->singular ), 'sitecore' ),
-			'parent_item_colon'          => __( 'Parent ' . ucwords( $this->singular ), 'sitecore' ),
-			'popular_items'              => __( 'Popular ' . ucwords( $this->plural ), 'sitecore' ),
-			'separate_items_with_commas' => __( 'Separate ' . ucwords( $this->plural ) . ' with commas', 'sitecore' ),
-			'add_or_remove_items'        => __( 'Add or Remove ' . ucwords( $this->plural ), 'sitecore' ),
-			'choose_from_most_used'      => __( 'Choose from the most used ' . ucwords( $this->plural ), 'sitecore' ),
-			'not_found'                  => __( 'No ' . ucwords( $this->plural ) . ' Found', 'sitecore' ),
-			'no_terms'                   => __( 'No ' . ucwords( $this->plural ), 'sitecore' ),
-			'items_list_navigation'      => __( ucwords( $this->plural ) . ' list navigation', 'sitecore' ),
-			'items_list'                 => __( ucwords( $this->plural ) . ' List', 'sitecore' ),
+			'name'                       => __( ucwords( $this->plural ), 'spr-core' ),
+			'singular_name'              => __( ucwords( $this->singular ), 'spr-core' ),
+			'menu_name'                  => __( ucwords( $this->plural ), 'spr-core' ),
+			'all_items'                  => __( 'All ' . ucwords( $this->plural ), 'spr-core' ),
+			'edit_item'                  => __( 'Edit ' . ucwords( $this->singular ), 'spr-core' ),
+			'view_item'                  => __( 'View ' . ucwords( $this->singular ), 'spr-core' ),
+			'update_item'                => __( 'Update ' . ucwords( $this->singular ), 'spr-core' ),
+			'add_new_item'               => __( 'Add New ' . ucwords( $this->singular ), 'spr-core' ),
+			'new_item_name'              => __( 'New ' . ucwords( $this->singular ), 'spr-core' ),
+			'parent_item'                => __( 'Parent ' . ucwords( $this->singular ), 'spr-core' ),
+			'parent_item_colon'          => __( 'Parent ' . ucwords( $this->singular ), 'spr-core' ),
+			'popular_items'              => __( 'Popular ' . ucwords( $this->plural ), 'spr-core' ),
+			'separate_items_with_commas' => __( 'Separate ' . ucwords( $this->plural ) . ' with commas', 'spr-core' ),
+			'add_or_remove_items'        => __( 'Add or Remove ' . ucwords( $this->plural ), 'spr-core' ),
+			'choose_from_most_used'      => __( 'Choose from the most used ' . ucwords( $this->plural ), 'spr-core' ),
+			'not_found'                  => __( 'No ' . ucwords( $this->plural ) . ' Found', 'spr-core' ),
+			'no_terms'                   => __( 'No ' . ucwords( $this->plural ), 'spr-core' ),
+			'items_list_navigation'      => __( ucwords( $this->plural ) . ' list navigation', 'spr-core' ),
+			'items_list'                 => __( ucwords( $this->plural ) . ' List', 'spr-core' ),
 		];
 
 		return $labels;
