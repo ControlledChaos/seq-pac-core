@@ -55,6 +55,34 @@ class Register_Listing extends Register_Type {
 	protected $menu_icon = 'dashicons-store';
 
 	/**
+	 * Supports
+	 *
+	 * The built in fields/metaboxes supported by the post type.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    array The array of support.
+	 */
+	protected $supports = [
+		'title',
+		'editor',
+		'thumbnail'
+	];
+
+	/**
+	 * Supported taxonomies
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    array The array of supported taxonomies.
+	 */
+	protected $taxonomies = [
+		'type',
+		'location',
+		'post_tag'
+	];
+
+	/**
 	 * Settings page
 	 *
 	 * Add a dettings page for the post type.
