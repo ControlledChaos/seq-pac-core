@@ -17,8 +17,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( function_exists( 'acf_add_local_field_group' ) ) :
 
-	acf_add_local_field_group(array(
-		'key' => 'group_5c8d61d95ad91',
+	acf_add_local_field_group( array(
+		'key' => 'group_listing_post_type',
 		'title' => 'Listings',
 		'fields' => array(
 			array(
