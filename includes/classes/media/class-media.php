@@ -82,6 +82,16 @@ class Media {
 	 */
 	public function image_sizes() {
 
+		// 16:9 HD Video.
+		add_image_size( 'wide-large', 1280, 720, true );
+		add_image_size( 'wide-medium', 960, 540, true );
+		add_image_size( 'wide-small', 640, 360, true );
+
+		// 21:9 Cinemascope.
+		add_image_size( 'banner-large', 1280, 549, true );
+		add_image_size( 'banner-medium', 960, 411, true );
+		add_image_size( 'banner-small', 640, 274, true );
+
 		/**
 		 * Meta image
 		 *
