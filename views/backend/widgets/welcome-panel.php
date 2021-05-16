@@ -42,7 +42,7 @@ $rental  = get_post_type_object( 'rental' );
 			<div class="sprc-dashboard-actions-icon listing-icon"><span class="dashicons <?php echo $listing->menu_icon; ?>"></span></div>
 			<p>
 				<a href="<?php echo admin_url( 'post-new.php?post_type=listing' ); ?>"><?php _e( 'Add New', 'spr-core' ); ?></a>
-				<a href="<?php echo admin_url( 'edit.php?post_type=listing' ); ?>"><?php _e( 'View List', 'spr-core' ); ?></a>
+				<a href="<?php echo admin_url( 'edit.php?post_type=listing' ); ?>"><?php _e( 'Manage', 'spr-core' ); ?></a>
 			</p>
 		</li>
 		<li>
@@ -50,9 +50,10 @@ $rental  = get_post_type_object( 'rental' );
 			<div class="sprc-dashboard-actions-icon rental-icon"><span class="dashicons <?php echo $rental->menu_icon; ?>"></span></div>
 			<p>
 				<a href="<?php echo admin_url( 'post-new.php?post_type=rental' ); ?>"><?php _e( 'Add New', 'spr-core' ); ?></a>
-				<a href="<?php echo admin_url( 'edit.php?post_type=rental' ); ?>"><?php _e( 'View List', 'spr-core' ); ?></a>
+				<a href="<?php echo admin_url( 'edit.php?post_type=rental' ); ?>"><?php _e( 'Manage', 'spr-core' ); ?></a>
 			</p>
 		</li>
+		<?php if ( get_option( 'page_on_front' ) ) : ?>
 		<li>
 			<h3><?php _e( 'Front Page', 'spr-core' ); ?></h3>
 			<div class="sprc-dashboard-actions-icon front-icon"><span class="dashicons dashicons-admin-home"></span></div>
@@ -60,6 +61,7 @@ $rental  = get_post_type_object( 'rental' );
 				<a href="<?php echo admin_url( 'post.php?post=' . get_option( 'page_on_front' ) . '&action=edit' ); ?>"><?php _e( 'Manage Content', 'spr-core' ); ?></a>
 			</p>
 		</li>
+		<?php endif; ?>
 	</ul>
 </div>
 
