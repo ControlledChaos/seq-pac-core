@@ -69,6 +69,7 @@
 .sprc-dashboard-actions-icon .dashicons {
   width: auto;
   height: auto;
+  opacity: 90%;
 }
 
 .sprc-dashboard-actions-icon .dashicons:before {
