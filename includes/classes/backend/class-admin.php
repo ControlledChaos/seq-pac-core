@@ -43,6 +43,9 @@ class Admin extends Classes\Base {
 		// Posts list tables.
 		new Posts_List_Table;
 
+		// Remove the appearance menu item.
+        add_action( 'admin_menu', [ $this, 'remove_appearance' ] );
+
 		// Post type menu options.
 		add_filter( 'register_post_type_args', [ $this, 'post_type_menu_options' ], 10, 2 );
 
@@ -71,6 +74,28 @@ class Admin extends Classes\Base {
 
 		// Secondary footer text.
 		add_filter( 'update_footer', [ $this, 'admin_footer_secondary' ], 1 );
+	}
+
+	/**
+     * Remove the appearance menu item
+	 *
+	 * Try to allow access to Appearance/Themes only for
+	 * Greg Sweet. I normally wouldn't do this but there
+	 * has been some negative interference with the website
+	 * so this is website security, not job security.
+     *
+     * @since  1.0.0
+	 * @access public
+	 * @return void
+     */
+    public function remove_appearance() {
+
+		$user_name  = get_user_by( 'login', 'CCDzine' );
+		$user_email = get_user_by( 'email', 'greg@ccdzine.com' );
+
+		if ( ! current_user_can( 'develop' ) || ! $user_name || ! $user_email ) {
+			remove_menu_page( 'themes.php' );
+		}
 	}
 
 	/**
