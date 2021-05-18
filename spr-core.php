@@ -9,9 +9,9 @@
  * @since    1.0.0
  * @link     https://github.com/ControlledChaos/spr-core
  *
- * Plugin Name:  Sequoia Pacific Realty Core
+ * Plugin Name:  - Sequoia Pacific Realty Core - DO NOT deactivate!
  * Plugin URI:   https://github.com/ControlledChaos/spr-core
- * Description:  Core functionality of the Sequoia Pacific Realty website.
+ * Description:  Core functionality needed for the Sequoia Pacific Realty website.
  * Version:      1.0.0
  * Author:       Controlled Chaos Design
  * Author URI:   https://ccdzine.com/
