@@ -78,10 +78,10 @@ class Tools extends Classes\Base {
 		parent :: __construct();
 
 		// @todo Put into a settings page.
-		new RTL_Test;
+		// new RTL_Test;
 
 		// @todo Put into a settings page.
-		new Customizer_Reset;
+		// new Customizer_Reset;
 
 		// Disable Google's FloC tracking.
 		new Disable_FloC;
