@@ -43,8 +43,8 @@ class Admin extends Classes\Base {
 		// Posts list tables.
 		new Posts_List_Table;
 
-		// Remove the appearance menu item.
-        add_action( 'admin_menu', [ $this, 'remove_appearance' ] );
+		// Remove admin menu item.
+        add_action( 'admin_menu', [ $this, 'remove_menu_items' ] );
 
 		// Post type menu options.
 		add_filter( 'register_post_type_args', [ $this, 'post_type_menu_options' ], 10, 2 );
@@ -77,9 +77,9 @@ class Admin extends Classes\Base {
 	}
 
 	/**
-     * Remove the appearance menu item
+     * Remove admin menu items
 	 *
-	 * Try to allow access to Appearance/Themes only for
+	 * Try to allow access to select menu items only for
 	 * Greg Sweet. I normally wouldn't do this but there
 	 * has been some negative interference with the website
 	 * so this is website security, not job security.
@@ -88,13 +88,14 @@ class Admin extends Classes\Base {
 	 * @access public
 	 * @return void
      */
-    public function remove_appearance() {
+    public function remove_menu_items() {
 
 		$user_name  = get_user_by( 'login', 'CCDzine' );
 		$user_email = get_user_by( 'email', 'greg@ccdzine.com' );
 
 		if ( ! current_user_can( 'develop' ) || ! $user_name || ! $user_email ) {
 			remove_menu_page( 'themes.php' );
+			// remove_menu_page( 'plugins.php' );
 		}
 	}
 
