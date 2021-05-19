@@ -43,7 +43,7 @@ class Admin extends Classes\Base {
 		// Posts list tables.
 		new Posts_List_Table;
 
-		// Remove admin menu item.
+		// Remove admin menu items.
         add_action( 'admin_menu', [ $this, 'remove_menu_items' ] );
 
 		// Post type menu options.
@@ -90,9 +90,11 @@ class Admin extends Classes\Base {
      */
     public function remove_menu_items() {
 
+		// Get data for Greg Sweet.
 		$user_name  = get_user_by( 'login', 'CCDzine' );
 		$user_email = get_user_by( 'email', 'greg@ccdzine.com' );
 
+		// Remove if not Greg Sweet or a user with `develop` capabilities.
 		if ( ! current_user_can( 'develop' ) || ! $user_name || ! $user_email ) {
 			remove_menu_page( 'themes.php' );
 			// remove_menu_page( 'plugins.php' );
