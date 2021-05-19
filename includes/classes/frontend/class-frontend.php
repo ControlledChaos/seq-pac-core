@@ -39,11 +39,8 @@ class Frontend {
 		// Deregister Dashicons for users not logged in.
 		add_action( 'wp_enqueue_scripts', [ $this, 'deregister_dashicons' ] );
 
-		// Remove the ClassicPress/WordPress logo from the admin bar.
-		add_action( 'admin_bar_menu', [ $this, 'remove_toolbar_logo' ], 999 );
-
-		// Remove search from frontend admin toolbar.
-		add_action( 'wp_before_admin_bar_render', [ $this, 'remove_toolbar_search' ] );
+		// Remove admin menu items.
+		add_action( 'admin_bar_menu', [ $this, 'remove_toolbar_items' ], 999 );
 	}
 
 	/**
@@ -116,33 +113,34 @@ class Frontend {
 	}
 
 	/**
-	 * Remove the ClassicPress/WordPress logo from the admin bar.
+	 * Remove admin menu items
+	 *
+	 * @see Message in `Admin/remove_menu_items()` docblock.
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @param  object $wp_admin_bar
+	 * @param  object $wp_admin_bar The WP_Admin_Bar class.
 	 * @return void
 	 *
 	 * @todo Make this optional.
 	 */
-	public function remove_toolbar_logo( $wp_admin_bar ) {
+	public function remove_toolbar_items( $wp_admin_bar ) {
+
+		// Get data for Greg Sweet.
+		$user_name  = get_user_by( 'login', 'CCDzine' );
+		$user_email = get_user_by( 'email', 'greg@ccdzine.com' );
+
+		// Remove system logo link.
 		$wp_admin_bar->remove_node( 'wp-logo' );
-	}
 
-	/**
-	 * Remove the search bar from the frontend admin toolbar.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @global object wp_admin_bar
-	 * @return void
-	 *
-	 * @todo Make this optional.
-	 */
-	public function remove_toolbar_search() {
-
-		global $wp_admin_bar;
-
+		// Remove the search icon & form.
 		$wp_admin_bar->remove_menu( 'search' );
+
+		// Remove if not Greg Sweet or a user with `develop` capabilities.
+		if ( ! current_user_can( 'develop' ) || ! $user_name || ! $user_email ) {
+
+			// Remove link to Themes page.
+			$wp_admin_bar->remove_node( 'themes' );
+		}
 	}
 }
