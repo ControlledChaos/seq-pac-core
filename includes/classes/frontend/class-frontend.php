@@ -167,10 +167,13 @@ class Frontend {
 		}
 
 		// Lightbox.
-		wp_enqueue_script( SPRC_CONFIG['admin_slug'] . '-lightbox', SPRC_URL . '/assets/js/lightbox' . $suffix . '.js', [ 'jquery' ], null, true );
+		wp_enqueue_script( SPRC_CONFIG['admin_slug'] . '-lightbox', SPRC_URL . 'assets/js/lightbox' . $suffix . '.js', [ 'jquery' ], null, true );
 
 		// Slider.
-		wp_enqueue_script( SPRC_CONFIG['admin_slug'] . '-slider', SPRC_URL . '/assets/js/slider' . $suffix . '.js', [ 'jquery' ], null, true );
+		wp_enqueue_script( SPRC_CONFIG['admin_slug'] . '-slider', SPRC_URL . 'assets/js/slider' . $suffix . '.js', [ 'jquery' ], null, true );
+
+		// Sticky.
+		wp_enqueue_script( SPRC_CONFIG['admin_slug'] . '-sticky', SPRC_URL . 'assets/js/sticky.js', [ 'jquery' ], null, true );
 	}
 
 	/**
