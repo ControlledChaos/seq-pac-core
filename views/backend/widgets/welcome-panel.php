@@ -73,7 +73,10 @@ $rental  = get_post_type_object( 'rental' );
  *
  * @since 1.0.0
  */
-if ( is_plugin_active( 'flexmls-idx/flexmls_connect.php' ) ) :
+if (
+	is_plugin_active( 'flexmls-idx/flexmls_connect.php' ) ||
+	is_plugin_active( 'mls-idx/mls-idx.php' )
+) :
 
 ?>
 <div id="sprc-dashboard-integrated-content" class="sprc-dashboard-content-wrapper">
