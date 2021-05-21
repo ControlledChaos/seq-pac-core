@@ -41,6 +41,12 @@ class Frontend {
 
 		// Remove admin menu items.
 		add_action( 'admin_bar_menu', [ $this, 'remove_toolbar_items' ], 999 );
+
+		// Enqueue scripts.
+		add_action( 'wp_enqueue_scripts', [ $this, 'scripts' ] );
+
+		// Enqueue styles.
+		add_action( 'wp_enqueue_scripts', [ $this, 'styles' ] );
 	}
 
 	/**
@@ -142,5 +148,51 @@ class Frontend {
 			// Remove link to Themes page.
 			$wp_admin_bar->remove_node( 'themes' );
 		}
+	}
+
+	/**
+	 * Enqueue scripts
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function scripts() {
+
+		// Script suffix.
+		if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+			$suffix = '';
+		} else {
+			$suffix = '.min';
+		}
+
+		// Lightbox.
+		wp_enqueue_script( SPRC_CONFIG['admin_slug'] . '-lightbox', SPRC_URL . '/assets/js/lightbox' . $suffix . '.js', [ 'jquery' ], null, true );
+
+		// Slider.
+		wp_enqueue_script( SPRC_CONFIG['admin_slug'] . '-slider', SPRC_URL . '/assets/js/slider' . $suffix . '.js', [ 'jquery' ], null, true );
+	}
+
+	/**
+	 * Enqueue styles
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function styles() {
+
+		// Script suffix.
+		if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+			$suffix = '';
+		} else {
+			$suffix = '.min';
+		}
+
+		// Lightbox.
+		wp_enqueue_style( SPRC_CONFIG['admin_slug'] . '-lightbox', SPRC_URL . '/assets/css/lightbox' . $suffix . '.css', [], null, 'all' );
+
+		// Slider.
+		wp_enqueue_style( SPRC_CONFIG['admin_slug'] . '-slider', SPRC_URL . '/assets/css/slider' . $suffix . '.css', [], null, 'all' );
 	}
 }
