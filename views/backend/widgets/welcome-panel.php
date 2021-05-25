@@ -10,13 +10,6 @@
 
 namespace SPR_Core;
 
-// Get the contact page ID.
-$contact_page = get_page_by_path( 'contact' );
-$contact_id   = '';
-if ( $contact_page ) {
-	$contact_id = $contact_page->ID;
-}
-
 // Get post type objects for labels & icons.
 $listing = get_post_type_object( 'listing' );
 $rental  = get_post_type_object( 'rental' );
