@@ -169,8 +169,9 @@ class Register_Listing extends Register_Type {
 
 		// New post type labels.
 		$labels = [
-			'menu_name' => 'Sale Listings',
-			'add_new'   => 'New Listing'
+			'singular_name' => 'Listing',
+			'menu_name'     => 'Sale Listings',
+			'add_new'       => 'New Listing'
 		];
 
 		return $labels;

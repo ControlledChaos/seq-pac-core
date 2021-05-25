@@ -169,8 +169,9 @@ class Register_Rental extends Register_Type {
 
 		// New post type labels.
 		$labels = [
-			'menu_name' => 'Rental Listings',
-			'add_new'   => 'New Rental'
+			'singular_name' => 'Rental',
+			'menu_name'     => 'Rental Listings',
+			'add_new'       => 'New Rental'
 		];
 
 		return $labels;
