@@ -70,7 +70,8 @@ function init() {
 	// Instantiate core classes.
 	new Core\Remove_Blog;
 	new Core\Type_Tax;
-	new Core\Register_Listing;
+	// new Core\Register_Listing;
+	new Core\Register_Featured;
 	new Core\Register_Rental;
 	new Core\Register_Location;
 	new Core\Register_Types;

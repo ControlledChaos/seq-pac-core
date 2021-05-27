@@ -67,6 +67,7 @@ define( 'SPRC_CLASSES', [
 	SPRC_CLASS_NS . '\Core\Type_Tax'           => SPRC_CLASS['core'] . 'type-tax.php',
 	SPRC_CLASS_NS . '\Core\Register_Type'      => SPRC_CLASS['core'] . 'register-type.php',
 	SPRC_CLASS_NS . '\Core\Register_Listing'   => SPRC_CLASS['core'] . 'register-listing.php',
+	SPRC_CLASS_NS . '\Core\Register_Featured'  => SPRC_CLASS['core'] . 'register-featured.php',
 	SPRC_CLASS_NS . '\Core\Register_Rental'    => SPRC_CLASS['core'] . 'register-rental.php',
 	SPRC_CLASS_NS . '\Core\Register_Admin'     => SPRC_CLASS['core'] . 'register-admin.php',
 	SPRC_CLASS_NS . '\Core\Register_Site_Help' => SPRC_CLASS['core'] . 'register-site-help.php',

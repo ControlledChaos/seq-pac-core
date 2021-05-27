@@ -38,6 +38,7 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 				'required_message' => '',
 				'choices' => array(
 					'active' => 'Active',
+					'pending' => 'Pending',
 					'archived' => 'Archived',
 				),
 				'allow_null' => 0,
