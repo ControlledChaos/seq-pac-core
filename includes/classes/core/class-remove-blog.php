@@ -366,12 +366,18 @@ class Remove_Blog {
 	 */
 	public function comments_number( $post_id ) {
 
+		global $post;
+
 		$post = get_post( $post_id );
+
+		if ( ! post_type_supports( get_post_type( $post_id ), 'comments' ) ) {
+			return;
+		}
 
 		if ( 'post' == get_post_type() ) {
 			return 0;
 		}
-		return $post->comment_count;
+		return get_comment_count( $post_id );
 	}
 
 	/**
@@ -380,12 +386,18 @@ class Remove_Blog {
 	 * @since  1.0.0
 	 * @access public
 	 * @param  boolean $open Whether comments are open.
-	 * @param  integer $post_idThe ID of the post.
+	 * @param  integer $post_id The ID of the post.
 	 * @return boolean Returns true to close posts comments.
 	 */
 	public function disable_posts_comments( $open, $post_id ) {
 
+		global $post;
+
 		$post = get_post( $post_id );
+
+		if ( ! post_type_supports( get_post_type( $post_id ), 'comments' ) ) {
+			return;
+		}
 
 		if ( 'post' == get_post_type() ) {
 			return false;
@@ -404,9 +416,15 @@ class Remove_Blog {
 	 */
 	public function disable_media_comments( $open, $post_id ) {
 
+		global $post;
+
 		$post = get_post( $post_id );
 
-		if ( 'attachment' == $post->post_type ) {
+		if ( ! post_type_supports( get_post_type( $post_id ), 'comments' ) ) {
+			return;
+		}
+
+		if ( 'attachment' == get_post_type() ) {
 			return false;
 		}
 		return $open;
