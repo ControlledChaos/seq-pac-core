@@ -349,6 +349,10 @@ class Remove_Blog {
 
 		$post = get_post( $post_id );
 
+		if ( ! post_type_supports( get_post_type( $post_id ), 'comments' ) ) {
+			return;
+		}
+
 		if ( 'post' == get_post_type() ) {
 			return [];
 		}
@@ -391,18 +395,10 @@ class Remove_Blog {
 	 */
 	public function disable_posts_comments( $open, $post_id ) {
 
-		global $post;
-
-		$post = get_post( $post_id );
-
-		if ( ! post_type_supports( get_post_type( $post_id ), 'comments' ) ) {
+		if ( 'post' != get_post_type() ) {
 			return;
 		}
-
-		if ( 'post' == get_post_type() ) {
-			return false;
-		}
-		return $open;
+		return false;
 	}
 
 	/**
@@ -416,18 +412,10 @@ class Remove_Blog {
 	 */
 	public function disable_media_comments( $open, $post_id ) {
 
-		global $post;
-
-		$post = get_post( $post_id );
-
-		if ( ! post_type_supports( get_post_type( $post_id ), 'comments' ) ) {
+		if ( 'attachment' != get_post_type() ) {
 			return;
 		}
-
-		if ( 'attachment' == get_post_type() ) {
-			return false;
-		}
-		return $open;
+		return false;
 	}
 
 	/**
