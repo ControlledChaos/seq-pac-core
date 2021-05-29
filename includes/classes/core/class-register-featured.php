@@ -180,4 +180,23 @@ class Register_Featured extends Register_Type {
 
 		return $labels;
 	}
+
+	/**
+	 * Rewrite post type labels
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return mixed Returns new values for array label keys.
+	 */
+	public function rewrite_labels() {
+
+		// Post type.
+		$post_type = $this->type_key;
+		$type_obj  = get_post_type_object( $post_type );
+
+		// New post type labels.
+		$type_obj->labels->singular_name =  __( 'Featured Listing', 'spr-core' );
+		$type_obj->labels->menu_name     = __( 'Featured Listings', 'spr-core' );
+		$type_obj->labels->add_new       = __( 'New Featured', 'spr-core' );
+	}
 }
