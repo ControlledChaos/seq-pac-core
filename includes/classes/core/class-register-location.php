@@ -56,7 +56,7 @@ class Register_Location extends Register_Type {
 	 * @access protected
 	 * @var    string The dashicon class for book.
 	 */
-	protected $menu_icon = 'dashicons-sticky';
+	protected $menu_icon = 'dashicons-search';
 
 	/**
 	 * Settings page
@@ -148,8 +148,8 @@ class Register_Location extends Register_Type {
 		$type_obj  = get_post_type_object( $post_type );
 
 		// New post type labels.
-		$type_obj->labels->menu_name = __( 'Listing Locations', 'spr-core' );
+		$type_obj->labels->menu_name = __( 'Location Search', 'spr-core' );
 		$type_obj->labels->all_items = __( 'All Locations', 'spr-core' );
-		$type_obj->labels->add_new   = __( 'New Location', 'spr-core' );
+		$type_obj->labels->add_new   = __( 'New Search', 'spr-core' );
 	}
 }
