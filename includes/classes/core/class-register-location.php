@@ -145,7 +145,7 @@ class Register_Location extends Register_Type {
 
 		// New post type labels.
 		$labels = [
-			'singular_name' => __( 'Location', 'spr-core' ),
+			'singular_name' => __( 'Location Search', 'spr-core' ),
 			'menu_name'     => __( 'Listing Locations', 'spr-core' ),
 			'add_new'       => __( 'New Location', 'spr-core' ),
 		];
