@@ -81,9 +81,7 @@ class Register_Featured extends Register_Type {
 	 * @var    array The array of supported taxonomies.
 	 */
 	protected $taxonomies = [
-		'type',
-		'location',
-		'post_tag'
+		'property_type'
 	];
 
 	/**

@@ -74,7 +74,7 @@ function init() {
 	new Core\Register_Featured;
 	new Core\Register_Location;
 	new Core\Register_Rental;
-	new Core\Register_Types;
+	new Core\Register_Property_Type;
 	new Core\Register_Admin;
 	new Core\Register_Site_Help;
 
@@ -86,13 +86,12 @@ function init() {
 	/**
 	 * Editor options for WordPress
 	 *
-	 * Not run for ClassicPress and the default antibrand system.
+	 * Not run for ClassicPress.
 	 * The `classicpress_version()` function checks for ClassicPress.
-	 * The `APP_INC_PATH` constant checks for the default antibrand system.
 	 *
 	 * Not run if the Classic Editor plugin is active.
 	 */
-	if ( ! function_exists( 'classicpress_version' ) || ! defined( 'APP_INC_PATH' ) ) {
+	if ( ! function_exists( 'classicpress_version' ) ) {
 		if ( ! is_plugin_active( 'classic-editor/classic-editor.php' ) ) {
 			new Core\Editor_Options;
 		}

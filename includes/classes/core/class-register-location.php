@@ -59,6 +59,17 @@ class Register_Location extends Register_Type {
 	protected $menu_icon = 'dashicons-search';
 
 	/**
+	 * Supported taxonomies
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    array The array of supported taxonomies.
+	 */
+	protected $taxonomies = [
+		'property_type'
+	];
+
+	/**
 	 * Settings page
 	 *
 	 * Add a settings page for the post type.
