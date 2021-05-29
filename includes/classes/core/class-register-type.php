@@ -355,7 +355,7 @@ class Register_Type {
 		// New post type options.
 		add_filter( 'register_post_type_args', [ $this, 'post_type_options' ], 10, 2 );
 
-		// Filter post type labels.
+		// Rewrite post type labels.
 		add_action( 'wp_loaded', [ $this, 'rewrite_labels' ] );
 
 		// Field groups.
@@ -444,7 +444,7 @@ class Register_Type {
 			'menu_name'             => __( ucwords( $this->plural ), 'spr-core' ),
 			'all_items'             => __( 'All ' . ucwords( $this->plural ), 'spr-core' ),
 			'add_new'               => __( 'Add New', 'spr-core' ),
-			'add_new_item'          => __( 'Add New ' . ucwords( $this->singular ), 'spr-core' ),
+			'add_new_item'          => __( 'New ' . ucwords( $this->singular ), 'spr-core' ),
 			'edit_item'             => __( 'Edit ' . ucwords( $this->singular ), 'spr-core' ),
 			'new_item'              => __( 'New ' . ucwords( $this->singular ), 'spr-core' ),
 			'view_item'             => __( 'View ' . ucwords( $this->singular ), 'spr-core' ),
@@ -468,7 +468,7 @@ class Register_Type {
 		];
 
 		// Filter for child classes to modify this array.
-		return apply_filters( $this->type_key . '_labels', $labels );
+		return $labels;
 	}
 
 	/**
