@@ -347,6 +347,10 @@ class Remove_Blog {
 	 */
 	public function existing_comments( $comments, $post_id ) {
 
+		if ( 'post' != get_post_type() ) {
+			return;
+		}
+
 		$post = get_post( $post_id );
 
 		if ( ! post_type_supports( get_post_type( $post_id ), 'comments' ) ) {
@@ -370,11 +374,15 @@ class Remove_Blog {
 	 */
 	public function comments_number( $post_id ) {
 
+		if ( 'post' != get_post_type() ) {
+			return;
+		}
+
 		global $post;
 
 		$post = get_post( $post_id );
 
-		if ( ! post_type_supports( get_post_type( $post_id ), 'comments' ) ) {
+		if ( ! post_type_supports( get_post_type(), 'comments' ) ) {
 			return;
 		}
 
