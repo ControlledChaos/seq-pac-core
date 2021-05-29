@@ -61,7 +61,7 @@ class Register_Sample_Type extends Register_Type {
 	/**
 	 * Settings page
 	 *
-	 * Add a dettings page for the post type.
+	 * Add a settings page for the post type.
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -145,8 +145,8 @@ class Register_Sample_Type extends Register_Type {
 
 		// New post type labels.
 		$labels = [
-			'menu_name' => 'Sample',
-			'add_new'   => 'New Sample'
+			'menu_name' => __( 'Sample', 'spr-core' ),
+			'add_new'   => __( 'New Sample', 'spr-core' ),
 		];
 
 		return $labels;

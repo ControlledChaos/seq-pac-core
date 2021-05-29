@@ -85,7 +85,7 @@ class Register_Listing extends Register_Type {
 	/**
 	 * Settings page
 	 *
-	 * Add a dettings page for the post type.
+	 * Add a settings page for the post type.
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -169,9 +169,9 @@ class Register_Listing extends Register_Type {
 
 		// New post type labels.
 		$labels = [
-			'singular_name' => 'Listing',
-			'menu_name'     => 'Sale Listings',
-			'add_new'       => 'New Listing'
+			'singular_name' => __( 'Listing', 'spr-core' ),
+			'menu_name'     => __( 'Sale Listings', 'spr-core' ),
+			'add_new'       => __( 'New Listing', 'spr-core' ),
 		];
 
 		return $labels;

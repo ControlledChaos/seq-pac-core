@@ -71,9 +71,9 @@ function init() {
 	new Core\Remove_Blog;
 	new Core\Type_Tax;
 	// new Core\Register_Listing;
+	new Core\Register_Location;
 	new Core\Register_Featured;
 	new Core\Register_Rental;
-	new Core\Register_Location;
 	new Core\Register_Types;
 	new Core\Register_Admin;
 	new Core\Register_Site_Help;

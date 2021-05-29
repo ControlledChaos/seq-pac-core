@@ -56,7 +56,7 @@ class Register_Featured extends Register_Type {
 	 * @access protected
 	 * @var    string The dashicon class for book.
 	 */
-	protected $menu_icon = 'dashicons-store';
+	protected $menu_icon = 'dashicons-flag';
 
 	/**
 	 * Supports
@@ -89,7 +89,7 @@ class Register_Featured extends Register_Type {
 	/**
 	 * Settings page
 	 *
-	 * Add a dettings page for the post type.
+	 * Add a settings page for the post type.
 	 *
 	 * @since  1.0.0
 	 * @access protected
@@ -173,9 +173,9 @@ class Register_Featured extends Register_Type {
 
 		// New post type labels.
 		$labels = [
-			'singular_name' => 'Featured Listing',
-			'menu_name'     => 'Featured Listings',
-			'add_new'       => 'New Featured'
+			'singular_name' => __( 'Featured Listing', 'spr-core' ),
+			'menu_name'     => __( 'Featured Listings', 'spr-core' ),
+			'add_new'       => __( 'New Featured', 'spr-core' ),
 		];
 
 		return $labels;

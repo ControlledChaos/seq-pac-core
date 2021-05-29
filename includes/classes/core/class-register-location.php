@@ -1,6 +1,10 @@
 <?php
 /**
- * Register Location taxonomy
+ * Sample class to register a post type
+ *
+ * Copy this file and rename it to reflect
+ * its new class name. Add to the autoloader
+ * and intantiate where appropriate.
  *
  * @package    SPR_Core
  * @subpackage Classes
@@ -16,55 +20,68 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-class Register_Location extends Register_Tax {
+class Register_Location extends Register_Type {
 
 	/**
-	 * Taxonomy
-	 *
-	 * Maximum 20 characters. May only contain lowercase alphanumeric
-	 * characters, dashes, and underscores. Dashes discouraged.
-	 *
-	 * @example 'color'
-	 * @example 'vehicle_type'
+	 * Post type
 	 *
 	 * @since  1.0.0
 	 * @access protected
-	 * @var    string The database name of the taxonomy.
+	 * @var    string The database name of the post type.
 	 */
-	protected $tax_key = 'Location';
-
-	/**
-	 * Associated post types
-	 *
-	 * @since  1.0.0
-	 * @access protected
-	 * @var    array The array of associated post types.
-	 */
-	protected $post_types = [
-		'listing',
-		'rental'
-	];
+	protected $type_key = 'location';
 
 	/**
 	 * Singular name
 	 *
 	 * @since  1.0.0
 	 * @access protected
-	 * @var    string The singular name of the taxonomy.
+	 * @var    string The singular name of the post type.
 	 */
-	protected $singular = 'location';
+	protected $singular = 'location search';
 
 	/**
 	 * Plural name
 	 *
 	 * @since  1.0.0
 	 * @access protected
-	 * @var    string The plural name of the taxonomy.
+	 * @var    string The plural name of the post type.
 	 */
-	protected $plural = 'locations';
+	protected $plural = 'location searches';
 
 	/**
-	 * Constructor magic method.
+	 * Menu icon
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    string The dashicon class for book.
+	 */
+	protected $menu_icon = 'dashicons-sticky';
+
+	/**
+	 * Settings page
+	 *
+	 * Add a settings page for the post type.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    boolean Whether to create a settings page for this post type.
+	 */
+	protected $settings_page = false;
+
+	/**
+	 * Register priority
+	 *
+	 * When to register the post type.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    integer The numeral to set hook priority.
+	 */
+	protected $priority = 20;
+
+	/**
+	 * Constructor method
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -74,6 +91,65 @@ class Register_Location extends Register_Tax {
 
 		// Run the parent constructor method.
 		parent :: __construct();
+	}
 
+	/**
+	 * Rewrite rules
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return array Returns the array of rewrite rules.
+	 */
+	public function rewrite() {
+
+		$rewrite = [
+			'slug'       => 'location',
+			'with_front' => true,
+			'feeds'      => true,
+			'pages'      => true
+		];
+
+		return $rewrite;
+	}
+
+	/**
+	 * New post type options
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  array $args Array of arguments for registering a post type.
+	 * @param  string $post_type Post type key.
+	 * @return array Returns an array of new option arguments.
+	 */
+	public function post_type_options( $args, $post_type ) {
+
+		// Only modify this post type.
+		if ( $this->type_key != $post_type ) {
+			return $args;
+		}
+
+		// Sample option.
+		$args['menu_position'] = 5;
+
+		return $args;
+	}
+
+	/**
+	 * Filter post type labels
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return mixed Returns new values for array label arguments.
+	 */
+	public function filter_labels() {
+
+		// New post type labels.
+		$labels = [
+			'singular_name' => __( 'Location', 'spr-core' ),
+			'menu_name'     => __( 'Listing Locations', 'spr-core' ),
+			'add_new'       => __( 'New Location', 'spr-core' ),
+		];
+
+		return $labels;
 	}
 }
