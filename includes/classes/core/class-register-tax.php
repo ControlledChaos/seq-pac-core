@@ -243,7 +243,7 @@ class Register_Tax {
 			'choose_from_most_used'      => __( 'Choose from the most used ' . ucwords( $this->plural ), 'spr-core' ),
 			'not_found'                  => __( 'No ' . ucwords( $this->plural ) . ' Found', 'spr-core' ),
 			'no_terms'                   => __( 'No ' . ucwords( $this->plural ), 'spr-core' ),
-			'filter_by_item'             => __( 'Filter by Category' 'spr-core' ),
+			'filter_by_item'             => __( 'Filter by Category', 'spr-core' ),
  			'items_list_navigation'      => __( ucwords( $this->plural ) . ' list navigation', 'spr-core' ),
 			'items_list'                 => __( ucwords( $this->plural ) . ' List', 'spr-core' ),
 			'most_used'                  => __( 'Most Used ' . ucwords( $this->plural ), 'spr-core' ),
