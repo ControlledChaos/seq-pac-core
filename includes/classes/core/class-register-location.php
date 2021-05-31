@@ -38,7 +38,7 @@ class Register_Location extends Register_Type {
 	 * @access protected
 	 * @var    string The singular name of the post type.
 	 */
-	protected $singular = 'location search';
+	protected $singular = 'search';
 
 	/**
 	 * Plural name
@@ -47,7 +47,7 @@ class Register_Location extends Register_Type {
 	 * @access protected
 	 * @var    string The plural name of the post type.
 	 */
-	protected $plural = 'location searches';
+	protected $plural = 'searches';
 
 	/**
 	 * Menu icon
@@ -160,7 +160,5 @@ class Register_Location extends Register_Type {
 
 		// New post type labels.
 		$type_obj->labels->menu_name = __( 'Location Search', 'spr-core' );
-		$type_obj->labels->all_items = __( 'All Searches', 'spr-core' );
-		$type_obj->labels->add_new   = __( 'New Search', 'spr-core' );
 	}
 }
