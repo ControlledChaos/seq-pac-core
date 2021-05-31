@@ -160,7 +160,7 @@ class Register_Location extends Register_Type {
 
 		// New post type labels.
 		$type_obj->labels->menu_name = __( 'Location Search', 'spr-core' );
-		$type_obj->labels->all_items = __( 'All Locations', 'spr-core' );
+		$type_obj->labels->all_items = __( 'All Searches', 'spr-core' );
 		$type_obj->labels->add_new   = __( 'New Search', 'spr-core' );
 	}
 }
