@@ -75,6 +75,7 @@ define( 'SPRC_CLASSES', [
 	SPRC_CLASS_NS . '\Core\Register_Location'      => SPRC_CLASS['core'] . 'register-location.php',
 	SPRC_CLASS_NS . '\Core\Register_Types'         => SPRC_CLASS['core'] . 'register-types.php',
 	SPRC_CLASS_NS . '\Core\Register_Property_Type' => SPRC_CLASS['core'] . 'register-property-type.php',
+	SPRC_CLASS_NS . '\Core\Register_Location_Tax'  => SPRC_CLASS['core'] . 'register-location-tax.php',
 	SPRC_CLASS_NS . '\Core\Types_Taxes_Order'      => SPRC_CLASS['core'] . 'types-taxes-order.php',
 	SPRC_CLASS_NS . '\Core\Taxonomy_Templates'     => SPRC_CLASS['core'] . 'taxonomy-templates.php',
 	SPRC_CLASS_NS . '\Core\Remove_Blog'            => SPRC_CLASS['core'] . 'remove-blog.php',

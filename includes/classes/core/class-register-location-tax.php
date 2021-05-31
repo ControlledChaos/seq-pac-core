@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-class Register_Location extends Register_Tax {
+class Register_Location_Tax extends Register_Tax {
 
 	/**
 	 * Taxonomy
@@ -41,7 +41,8 @@ class Register_Location extends Register_Tax {
 	 * @var    array The array of associated post types.
 	 */
 	protected $post_types = [
-		'listing',
+		'location',
+		'featured',
 		'rental'
 	];
 

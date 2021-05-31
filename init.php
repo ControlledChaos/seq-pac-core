@@ -75,6 +75,7 @@ function init() {
 	new Core\Register_Location;
 	new Core\Register_Rental;
 	new Core\Register_Property_Type;
+	new Core\Register_Location_Tax;
 	new Core\Register_Admin;
 	new Core\Register_Site_Help;
 
