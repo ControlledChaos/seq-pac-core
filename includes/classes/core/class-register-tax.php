@@ -158,8 +158,8 @@ class Register_Tax {
 		// Register taxonomy.
 		add_action( 'init', [ $this, 'register' ] );
 
-		// New taxonomy labels.
-		add_filter( $this->tax_key . '_labels', [ $this, 'filter_labels' ] );
+		// Rewrite taxonomy labels.
+		add_action( 'wp_loaded', [ $this, 'rewrite_labels' ] );
 
 	}
 
@@ -243,12 +243,15 @@ class Register_Tax {
 			'choose_from_most_used'      => __( 'Choose from the most used ' . ucwords( $this->plural ), 'spr-core' ),
 			'not_found'                  => __( 'No ' . ucwords( $this->plural ) . ' Found', 'spr-core' ),
 			'no_terms'                   => __( 'No ' . ucwords( $this->plural ), 'spr-core' ),
-			'items_list_navigation'      => __( ucwords( $this->plural ) . ' list navigation', 'spr-core' ),
+			'filter_by_item'             => __( 'Filter by Category' 'spr-core' ),
+ 			'items_list_navigation'      => __( ucwords( $this->plural ) . ' list navigation', 'spr-core' ),
 			'items_list'                 => __( ucwords( $this->plural ) . ' List', 'spr-core' ),
+			'most_used'                  => __( 'Most Used ' . ucwords( $this->plural ), 'spr-core' ),
+			'back_to_items'              => __( 'Back to ' . ucwords( $this->plural ), 'spr-core' )
 		];
 
 		// Filter for child classes to modify this array.
-		return apply_filters( $this->tax_key . '_labels', $labels );
+		return $labels;
 	}
 
 	/**
@@ -269,19 +272,11 @@ class Register_Tax {
 	}
 
 	/**
-	 * Filter taxonomy labels
+	 * Rewrite taxonomy labels
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @return mixed Returns new values for array label arguments.
+	 * @return mixed Returns new values for array label keys.
 	 */
-	public function filter_labels() {
-
-		// Labels to change.
-		$labels = [
-			// $key => $value
-		];
-
-		return $labels;
-	}
+	public function rewrite_labels() {}
 }
