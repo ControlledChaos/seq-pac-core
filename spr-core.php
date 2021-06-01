@@ -11,7 +11,7 @@
  *
  * Plugin Name:  - Sequoia Pacific Realty Core - DO NOT deactivate!
  * Plugin URI:   https://github.com/ControlledChaos/spr-core
- * Description:  Core functionality needed for the Sequoia Pacific Realty website.
+ * Description:  Core functionality needed for the Sequoia Pacific Realty website. The Sequoia Pacific Realty website and this plugin rely heavily on the Advanced Custom Fields Pro (ACF) plugin. Do not deactivate ACF unless errors are being investigated! If the copy of ACF Pro included with the Sequoia Pacific Realty website is somehow deleted, please contact Greg Sweet (greg@ccdzine.com) <greg@ccdzine.com> for a new copy.
  * Version:      1.0.0
  * Author:       Controlled Chaos Design
  * Author URI:   https://ccdzine.com/
