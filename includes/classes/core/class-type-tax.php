@@ -47,6 +47,9 @@ class Type_Tax {
 		// Add excerpts to pages for use in meta data.
 		add_action( 'init', [ $this, 'add_page_excerpts' ] );
 
+		// Post type excerpt metaboxes.
+		add_action( 'add_meta_boxes', [ $this, 'excerpt_metabox' ], 20 );
+
 		// Change post type labels.
 		add_action( 'wp_loaded', [ $this, 'rewrite_post_type_labels' ] );
 
@@ -196,6 +199,72 @@ class Type_Tax {
 	 */
 	public function add_page_excerpts() {
 		add_post_type_support( 'page', 'excerpt' );
+	}
+
+	/**
+	 * Post type excerpt metaboxes
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @global array $wp_meta_boxes Access the metaboxes array.
+	 * @return void
+	 */
+	public function excerpt_metabox() {
+
+		if ( ! post_type_supports( get_post_type(), 'excerpt' ) ) {
+			return;
+		}
+
+		global $wp_meta_boxes;
+
+		// Arrays of post type query arguments.
+		$query = [
+			'public'   => true,
+			'_builtin' => false
+		];
+
+		$get_types = get_post_types( $query, 'names', 'and' );
+
+		$builtin = [ 'post', 'page' ];
+
+		// Merge the post type arrays.
+		$post_types = array_merge( $builtin, $get_types );
+		if ( $post_types ) {
+
+			foreach ( $post_types as $post_type ) {
+
+				$type = get_post_type_object( $post_type );
+
+				$wp_meta_boxes[ $type->name ]['normal']['core']['postexcerpt']['title'] = __( 'Content Summary', 'spr-core' );
+				$wp_meta_boxes[ $type->name ]['normal']['core']['postexcerpt']['callback'] = [ $this, 'excerpt_metabox_callback' ];
+			}
+		}
+	}
+
+	/**
+	 * Display post excerpt form fields.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  WP_Post $post The post object.
+	 * @return void
+	 */
+	function excerpt_metabox_callback( $post ) {
+
+	?>
+	<p class="description">
+		<?php _e( 'Add a brief summary of this page to be used in search engine metadata and for display in social media embeds.', 'spr-core' ); ?>
+	</p>
+
+	<label class="screen-reader-text" for="excerpt">
+		<?php _e( 'Summary Description', 'spr-core' ); ?>
+	</label>
+
+	<textarea rows="1" cols="40" name="excerpt" id="excerpt">
+		<?php echo $post->post_excerpt; ?>
+	</textarea>
+	<?php
+
 	}
 
 	/**
