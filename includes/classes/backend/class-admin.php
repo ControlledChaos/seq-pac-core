@@ -66,6 +66,9 @@ class Admin extends Classes\Base {
 			add_action( 'admin_menu', [ $this, 'menu_remove_site_health' ] );
 		}
 
+		// Change file menu labels.
+		add_action( 'admin_menu', [ $this, 'rewrite_file_labels' ] );
+
 		// Move the Menus & Widgets menu items.
 		add_action( 'admin_menu', [ $this, 'menus_widgets' ] );
 
@@ -255,6 +258,23 @@ class Admin extends Classes\Base {
 			wp_redirect( admin_url( '/', 'http' ), 302 );
 			exit;
 		}
+	}
+
+	/**
+	 * Rewrite file menu labels
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @global $menu Get menu array.
+	 * @return mixed Returns new values for array label keys.
+	 */
+	public function rewrite_file_labels() {
+
+		// Access global variables.
+		global $menu;
+
+		// Media library label.
+		$menu[10][0] = __( 'Media Library', 'spr-core' );
 	}
 
 	/**

@@ -159,21 +159,19 @@ class Register_Rental extends Register_Type {
 	}
 
 	/**
-	 * Filter post type labels
+	 * Rewrite post type labels
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @return mixed Returns new values for array label arguments.
+	 * @return mixed Returns new values for array label keys.
 	 */
-	public function filter_labels() {
+	public function rewrite_labels() {
+
+		// Post type.
+		$post_type = $this->type_key;
+		$type_obj  = get_post_type_object( $post_type );
 
 		// New post type labels.
-		$labels = [
-			'singular_name' => __( 'Rental', 'spr-core' ),
-			'menu_name'     => __( 'Rental Listings', 'spr-core' ),
-			'add_new'       => __( 'New Rental', 'spr-core' ),
-		];
-
-		return $labels;
+		$type_obj->labels->menu_name = __( 'Rental Listings', 'spr-core' );
 	}
 }

@@ -47,6 +47,9 @@ class Type_Tax {
 		// Add excerpts to pages for use in meta data.
 		add_action( 'init', [ $this, 'add_page_excerpts' ] );
 
+		// Change post type labels.
+		add_action( 'wp_loaded', [ $this, 'rewrite_post_type_labels' ] );
+
 		// Show excerpt metabox by default.
 		add_filter( 'default_hidden_meta_boxes', [ $this, 'show_excerpt_metabox' ], 10, 2 );
 
@@ -193,6 +196,22 @@ class Type_Tax {
 	 */
 	public function add_page_excerpts() {
 		add_post_type_support( 'page', 'excerpt' );
+	}
+
+	/**
+	 * Rewrite post type labels
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return mixed Returns new values for array label keys.
+	 */
+	public function rewrite_post_type_labels() {
+
+		// Post type.
+		$page  = get_post_type_object( 'page' );
+
+		// New page labels.
+		$page->labels->menu_name = __( 'Static Content', 'spr-core' );
 	}
 
 	/**
