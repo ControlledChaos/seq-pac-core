@@ -161,6 +161,17 @@ function init() {
 	add_filter( 'wp_mail_from_name', function( $name ) {
 		return apply_filters( 'sprc_mail_from_name', get_bloginfo( 'name' ) );
 	} );
+
+	// Login footer credit.
+	add_action( 'login_footer', function() {
+		printf(
+			'<p>%s %s <a href="%s" target="_blank" rel="nofollow">%s</a></p>',
+			get_bloginfo( 'name' ),
+			__( 'website designed & developed by', 'spr-core' ),
+			esc_url( 'http://ccdzine.com' ),
+			__( 'Controlled Chaos Design', 'spr-core' )
+		);
+	} );
 }
 
 // Run initialization function.
