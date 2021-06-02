@@ -102,7 +102,7 @@ if (
 			<h3><?php _e( 'Navigation Menus', 'spr-core' ); ?></h3>
 			<div class="sprc-dashboard-actions-icon nav-menus-icon"><span class="dashicons dashicons-menu-alt"></span></div>
 			<p>
-				<a href="<?php echo admin_url( 'nav-menus.php' ); ?>"><?php _e( 'Manage Widgets', 'spr-core' ); ?></a>
+				<a href="<?php echo admin_url( 'nav-menus.php' ); ?>"><?php _e( 'Manage Menus', 'spr-core' ); ?></a>
 			</p>
 		</li>
 		<li>
