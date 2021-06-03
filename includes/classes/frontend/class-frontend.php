@@ -193,9 +193,9 @@ class Frontend {
 		}
 
 		// Lightbox.
-		wp_enqueue_style( SPRC_CONFIG['admin_slug'] . '-lightbox', SPRC_URL . '/assets/css/lightbox' . $suffix . '.css', [], null, 'all' );
+		wp_enqueue_style( SPRC_CONFIG['admin_slug'] . '-lightbox', SPRC_URL . 'assets/css/lightbox' . $suffix . '.css', [], null, 'all' );
 
 		// Slider.
-		wp_enqueue_style( SPRC_CONFIG['admin_slug'] . '-slider', SPRC_URL . '/assets/css/slider' . $suffix . '.css', [], null, 'all' );
+		wp_enqueue_style( SPRC_CONFIG['admin_slug'] . '-slider', SPRC_URL . 'assets/css/slider' . $suffix . '.css', [], null, 'all' );
 	}
 }
