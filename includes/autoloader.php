@@ -125,6 +125,8 @@ define( 'SPRC_CLASSES', [
 	SPRC_CLASS_NS . '\Front\Frontend'       => SPRC_CLASS['front'] . 'frontend.php',
 	SPRC_CLASS_NS . '\Front\Title_Filter'   => SPRC_CLASS['front'] . 'title-filter.php',
 	SPRC_CLASS_NS . '\Front\Content_Filter' => SPRC_CLASS['front'] . 'content-filter.php',
+	SPRC_CLASS_NS . '\Front\Meta\Meta_Data' => SPRC_CLASS['front'] . 'meta-data.php',
+	SPRC_CLASS_NS . '\Front\Meta\Meta_Tags' => SPRC_CLASS['front'] . 'meta-tags.php'
 
 	// General/miscellaneous classes.
 

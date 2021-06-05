@@ -12,15 +12,16 @@ namespace SPR_Core;
 
 // Alias namespaces.
 use
-SPR_Core\Classes          as Classes,
-SPR_Core\Classes\Core     as Core,
-SPR_Core\Classes\Settings as Settings,
-SPR_Core\Classes\Tools    as Tools,
-SPR_Core\Classes\Media    as Media,
-SPR_Core\Classes\Users    as Users,
-SPR_Core\Classes\Admin    as Admin,
-SPR_Core\Classes\Front    as Front,
-SPR_Core\Classes\Vendor   as Vendor;
+SPR_Core\Classes            as Classes,
+SPR_Core\Classes\Core       as Core,
+SPR_Core\Classes\Settings   as Settings,
+SPR_Core\Classes\Tools      as Tools,
+SPR_Core\Classes\Media      as Media,
+SPR_Core\Classes\Users      as Users,
+SPR_Core\Classes\Admin      as Admin,
+SPR_Core\Classes\Front      as Front,
+SPR_Core\Classes\Front\Meta as Meta,
+SPR_Core\Classes\Vendor     as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -119,6 +120,8 @@ function init() {
 	// Instantiate frontend classes.
 	if ( ! is_admin() ) {
 		new Front\Frontend;
+		new Meta\Meta_Data;
+		new Meta\Meta_Tags;
 	}
 
 	// Disable WordPress administration email verification prompt.
