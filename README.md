@@ -1,6 +1,6 @@
 # Sequoia Pacific Realty Core
 
-Core functionality of the Sequoia Pacific Realty website.
+Core functionality plugin for the Sequoia Pacific Realty website.
 
 ![PHP tested on version 7.4.8](https://img.shields.io/badge/PHP-7.4.8-8892bf.svg?style=flat-square)
 ![WordPress tested on version 5.7.1](https://img.shields.io/badge/WordPress-5.7.1-0073aa.svg?style=flat-square)
