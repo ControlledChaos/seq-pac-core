@@ -172,6 +172,9 @@ class Frontend {
 		// Slider.
 		wp_enqueue_script( SPRC_CONFIG['admin_slug'] . '-slider', SPRC_URL . 'assets/js/slider' . $suffix . '.js', [ 'jquery' ], null, true );
 
+		// Tooltips.
+		wp_enqueue_script( SPRC_CONFIG['admin_slug'] . '-tooltips', SPRC_URL . 'assets/js/tooltips' . $suffix . '.js', [ 'jquery' ], null, true );
+
 		// Sticky.
 		wp_enqueue_script( SPRC_CONFIG['admin_slug'] . '-sticky', SPRC_URL . 'assets/js/sticky.js', [ 'jquery' ], null, true );
 	}
@@ -197,5 +200,8 @@ class Frontend {
 
 		// Slider.
 		wp_enqueue_style( SPRC_CONFIG['admin_slug'] . '-slider', SPRC_URL . 'assets/css/slider' . $suffix . '.css', [], null, 'all' );
+
+		// Tooltips.
+		wp_enqueue_style( SPRC_CONFIG['admin_slug'] . '-tooltips', SPRC_URL . 'assets/css/tooltips' . $suffix . '.css', [], null, 'all' );
 	}
 }
