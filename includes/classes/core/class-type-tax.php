@@ -80,7 +80,9 @@ class Type_Tax {
 
 		$post_type_obj = get_post_type_object( get_post_type() );
 
-		if ( $post_type_obj ) {
+		if ( $post_type_obj && 'staff' == get_post_type() ) {
+			$post_title = esc_html__( 'Member Name', 'spr-core' );
+		} elseif ( $post_type_obj ) {
 			$name = $post_type_obj->labels->singular_name;
 			$post_title = esc_html__( $name . ' Title', 'spr-core' );
 		} else {

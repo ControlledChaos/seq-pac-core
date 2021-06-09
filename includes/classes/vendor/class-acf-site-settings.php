@@ -1,25 +1,22 @@
 <?php
 /**
- * Admin ACF options page
+ * ACF site settings page
  *
  * @package    SPR_Core
  * @subpackage Classes
- * @category   Admin
+ * @category   Vendor
  * @since      1.0.0
  */
 
 declare( strict_types = 1 );
-namespace SPR_Core\Classes\Admin;
-
-// Alias namespaces.
-use SPR_Core\Classes\Vendor as Vendor;
+namespace SPR_Core\Classes\Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-class Admin_ACF_Settings_Page extends Vendor\Add_ACF_Suboptions {
+class ACF_Site_Settings extends Add_ACF_Suboptions {
 
 	/**
 	 * Parent slug
@@ -29,7 +26,7 @@ class Admin_ACF_Settings_Page extends Vendor\Add_ACF_Suboptions {
 	 * @var    string The slug name for the parent menu or
 	 *                the file name of a standard admin page.
 	 */
-	protected $parent_slug = 'options-general.php';
+	protected $parent_slug = 'index.php';
 
 	/**
 	 * Page title
@@ -40,7 +37,7 @@ class Admin_ACF_Settings_Page extends Vendor\Add_ACF_Suboptions {
 	 *                title tags of the page when the
 	 *                menu is selected.
 	 */
-	protected $page_title = 'Admin Options';
+	protected $page_title = 'Sequoia Pacific Website Settings';
 
 	/**
 	 * Menu title
@@ -49,7 +46,7 @@ class Admin_ACF_Settings_Page extends Vendor\Add_ACF_Suboptions {
 	 * @access protected
 	 * @var    string The text to be used for the menu.
 	 */
-	protected $menu_title = 'Admin';
+	protected $menu_title = 'Site Settings';
 
 	/**
 	 * Page slug
@@ -58,7 +55,7 @@ class Admin_ACF_Settings_Page extends Vendor\Add_ACF_Suboptions {
 	 * @access protected
 	 * @var    string The slug name to refer to the menu by.
 	 */
-	protected $menu_slug = 'admin-options';
+	protected $menu_slug = 'manage-website';
 
 	/**
 	 * Menu position

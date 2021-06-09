@@ -65,20 +65,16 @@ function init() {
 	// Get compatibility functions.
 	require SPRC_PATH . 'includes/vendor/compatibility.php';
 
-	// Instantiate settings classes.
-	// new Admin\Content_Settings;
-
 	// Instantiate core classes.
 	new Core\Remove_Blog;
 	new Core\Type_Tax;
-	// new Core\Register_Listing;
 	new Core\Register_Featured;
 	new Core\Register_Location;
 	new Core\Register_Rental;
+	new Core\Register_Staff;
 	new Core\Register_Property_Type;
 	new Core\Register_Location_Tax;
 	new Core\Register_Admin;
-	new Core\Register_Site_Help;
 
 	// If the Customizer is disabled in the system config file.
 	if ( ( defined( 'SPRC_ALLOW_CUSTOMIZER' ) && false == SPRC_ALLOW_CUSTOMIZER ) && ! current_user_can( 'develop' ) ) {

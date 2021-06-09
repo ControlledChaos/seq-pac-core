@@ -9,7 +9,8 @@
  */
 
 namespace SPR_Core\Classes\Admin;
-use SPR_Core\Classes as Classes;
+use SPR_Core\Classes as Classes,
+	SPR_Core\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -33,7 +34,10 @@ class Admin extends Classes\Base {
 		global $pagenow;
 
 		// Manage website page/help pages.
-		new Manage_Website_Page;
+		// new Manage_Website_Page;
+
+		// ACF site settings.
+		new Vendor\ACF_Site_Settings;
 
 		// Run the dashboard only on the backend index screen.
 		if ( 'index.php' == $pagenow ) {
