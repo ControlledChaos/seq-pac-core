@@ -51,7 +51,7 @@ class Meta_Tags {
 	public function print_meta_tags() {
 
 		// Stop if `use_meta_tags` returns false.
-		if ( $this->use_meta_tags() ) {
+		if ( ! $this->use_meta_tags() ) {
 			return;
 		}
 
