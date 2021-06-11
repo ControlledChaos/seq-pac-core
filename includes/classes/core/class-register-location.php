@@ -114,7 +114,7 @@ class Register_Location extends Register_Type {
 	public function rewrite() {
 
 		$rewrite = [
-			'slug'       => 'location',
+			'slug'       => 'locations',
 			'with_front' => true,
 			'feeds'      => true,
 			'pages'      => true
