@@ -6,6 +6,12 @@
 	max-width: 1024px;
 	margin: 2rem 0;
 	padding: 2rem 2rem 0;
+	background: inherit;
+
+	&:before,
+	&:after {
+		background: none;
+	}
 
 	.sprc-dashboard-content-wrapper {
 

@@ -2,6 +2,11 @@
   max-width: 1024px;
   margin: 2rem 0;
   padding: 2rem 2rem 0;
+  background: inherit;
+}
+
+.welcome-panel:before, .welcome-panel:after {
+  background: none;
 }
 
 .welcome-panel .sprc-dashboard-content-wrapper:not(:first-of-type) {
